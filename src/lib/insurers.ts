@@ -108,7 +108,7 @@ export const insurers: Insurer[] = [
     id: "axa",
     name: "AXA Affin General Insurance",
     shortName: "AXA",
-    logo: "/images/insurers/Axa.png",
+    logo: "/images/insurers/axa.png",
     rating: 4.4,
     established: 1954,
     claimsRating: "Very Good",

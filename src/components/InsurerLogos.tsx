@@ -3,7 +3,7 @@ import Image from "next/image";
 const insurers = [
   { name: "Allianz", logo: "/images/insurers/allianz.png" },
   { name: "Etiqa", logo: "/images/insurers/etiqa.png" },
-  { name: "AXA", logo: "/images/insurers/Axa.png" },
+  { name: "AXA", logo: "/images/insurers/axa.png" },
   { name: "Tokio Marine", logo: "/images/insurers/Tokio Marine.png" },
   { name: "Zurich", logo: "/images/insurers/zurich.png" },
   { name: "Lonpac", logo: "/images/insurers/lonpac.png" },
