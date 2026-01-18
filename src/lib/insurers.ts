@@ -194,7 +194,7 @@ export const insurers: Insurer[] = [
     id: "tokio-marine",
     name: "Tokio Marine Insurance",
     shortName: "Tokio Marine",
-    logo: "/images/insurers/Tokio Marine.png",
+    logo: "/images/insurers/Tokio Marine.avif",
     rating: 4.5,
     established: 1879,
     claimsRating: "Excellent",
