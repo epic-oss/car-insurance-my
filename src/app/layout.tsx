@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "CarInsuranceMY",
   },
   verification: {
-    google: "XXXXXXXXXX",
+    google: "4PTwYXHgvCxjYV6q7HD1rEAiR0o8dIWZqpmL5jDPdnw",
   },
 };
 
