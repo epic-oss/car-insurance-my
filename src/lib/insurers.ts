@@ -1,3 +1,9 @@
+export interface VerdictData {
+  badge: "RECOMMENDED" | "GOOD VALUE" | "BUDGET PICK";
+  bestFor: string[];
+  skipIf: string[];
+}
+
 export interface Insurer {
   id: string;
   name: string;
@@ -15,6 +21,7 @@ export interface Insurer {
   coverage: string[];
   addOns: string[];
   color: string;
+  verdict?: VerdictData;
 }
 
 export const insurers: Insurer[] = [
@@ -60,6 +67,18 @@ export const insurers: Insurer[] = [
       "Strike, riot, civil commotion",
     ],
     color: "#E31837",
+    verdict: {
+      badge: "GOOD VALUE",
+      bestFor: [
+        "Budget-conscious drivers wanting competitive pricing",
+        "Those who prefer fast digital claims processing",
+        "Maybank customers (integrated services)",
+      ],
+      skipIf: [
+        "You need extensive add-on options",
+        "You prefer in-person service over digital",
+      ],
+    },
   },
   {
     id: "allianz",
@@ -103,6 +122,18 @@ export const insurers: Insurer[] = [
       "Key care coverage",
     ],
     color: "#003781",
+    verdict: {
+      badge: "RECOMMENDED",
+      bestFor: [
+        "Drivers wanting premium roadside assistance (Road Rangers)",
+        "Those who value strong global brand reputation",
+        "Car owners needing comprehensive add-on options",
+      ],
+      skipIf: [
+        "You're looking for the cheapest premiums",
+        "You don't need extensive add-ons",
+      ],
+    },
   },
   {
     id: "axa",
@@ -146,6 +177,18 @@ export const insurers: Insurer[] = [
       "24-hour emergency assistance",
     ],
     color: "#00008F",
+    verdict: {
+      badge: "RECOMMENDED",
+      bestFor: [
+        "Drivers wanting flexible coverage options",
+        "Those who value international brand backing",
+        "Car owners needing good customer service",
+      ],
+      skipIf: [
+        "You're looking for the absolute lowest price",
+        "You prefer local Malaysian brands",
+      ],
+    },
   },
   {
     id: "tokio-marine",
@@ -189,6 +232,18 @@ export const insurers: Insurer[] = [
       "Unlimited towing",
     ],
     color: "#00529B",
+    verdict: {
+      badge: "RECOMMENDED",
+      bestFor: [
+        "Drivers seeking established, financially stable insurer",
+        "Those who value EZ Claim service",
+        "Car owners wanting accident forgiveness",
+      ],
+      skipIf: [
+        "You prefer modern digital-first experience",
+        "You want the newest online features",
+      ],
+    },
   },
   {
     id: "zurich",
@@ -232,6 +287,18 @@ export const insurers: Insurer[] = [
       "Return to invoice",
     ],
     color: "#003399",
+    verdict: {
+      badge: "GOOD VALUE",
+      bestFor: [
+        "Drivers wanting balanced price and coverage",
+        "Those who value Swiss brand reliability",
+        "Car owners needing standard comprehensive coverage",
+      ],
+      skipIf: [
+        "You need specialized add-ons",
+        "You want the most innovative features",
+      ],
+    },
   },
   {
     id: "lonpac",

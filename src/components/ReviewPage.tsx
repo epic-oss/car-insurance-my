@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LeadForm from "@/components/LeadForm";
 import FAQ from "@/components/FAQ";
+import VerdictCard from "@/components/VerdictCard";
 import { Insurer } from "@/lib/insurers";
 
 interface ReviewPageProps {
@@ -321,20 +322,45 @@ export default function ReviewPage({ insurer }: ReviewPageProps) {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Verdict</h2>
-          <div className="prose prose-lg max-w-none">
-            <p>
-              {insurer.name} is a {insurer.rating >= 4.5 ? "top-tier" : insurer.rating >= 4 ? "solid" : "decent"} choice for Malaysian car owners looking for {insurer.priceRating.toLowerCase()} insurance with {insurer.claimsRating.toLowerCase()} claims service.
-            </p>
-            <p>
-              Their standout features include {insurer.features[0].toLowerCase()} and {insurer.features[1].toLowerCase()}, making them particularly suitable for drivers who value these benefits.
-            </p>
-            <p>
-              {insurer.pros[0]} is a significant advantage, though potential customers should be aware that {insurer.cons[0].toLowerCase()}.
-            </p>
-            <p>
-              Overall, we recommend {insurer.shortName} for {insurer.priceRating === "Premium" ? "those who prioritize premium service and comprehensive coverage" : insurer.priceRating === "Budget-Friendly" ? "budget-conscious drivers who need essential coverage" : "drivers seeking a good balance of price and coverage"}.
-            </p>
-          </div>
+          {insurer.verdict ? (
+            <VerdictCard
+              verdictData={{
+                rating: insurer.rating,
+                badge: insurer.verdict.badge,
+                bestFor: insurer.verdict.bestFor,
+                skipIf: insurer.verdict.skipIf,
+              }}
+              insurerName={insurer.name}
+            >
+              <p>
+                {insurer.name} is a {insurer.rating >= 4.5 ? "top-tier" : insurer.rating >= 4 ? "solid" : "decent"} choice for Malaysian car owners looking for {insurer.priceRating.toLowerCase()} insurance with {insurer.claimsRating.toLowerCase()} claims service.
+              </p>
+              <p>
+                Their standout features include {insurer.features[0].toLowerCase()} and {insurer.features[1].toLowerCase()}, making them particularly suitable for drivers who value these benefits.
+              </p>
+              <p>
+                {insurer.pros[0]} is a significant advantage, though potential customers should be aware that {insurer.cons[0].toLowerCase()}.
+              </p>
+              <p>
+                Overall, we recommend {insurer.shortName} for {insurer.priceRating === "Premium" ? "those who prioritize premium service and comprehensive coverage" : insurer.priceRating === "Budget-Friendly" ? "budget-conscious drivers who need essential coverage" : "drivers seeking a good balance of price and coverage"}.
+              </p>
+            </VerdictCard>
+          ) : (
+            <div className="prose prose-lg max-w-none">
+              <p>
+                {insurer.name} is a {insurer.rating >= 4.5 ? "top-tier" : insurer.rating >= 4 ? "solid" : "decent"} choice for Malaysian car owners looking for {insurer.priceRating.toLowerCase()} insurance with {insurer.claimsRating.toLowerCase()} claims service.
+              </p>
+              <p>
+                Their standout features include {insurer.features[0].toLowerCase()} and {insurer.features[1].toLowerCase()}, making them particularly suitable for drivers who value these benefits.
+              </p>
+              <p>
+                {insurer.pros[0]} is a significant advantage, though potential customers should be aware that {insurer.cons[0].toLowerCase()}.
+              </p>
+              <p>
+                Overall, we recommend {insurer.shortName} for {insurer.priceRating === "Premium" ? "those who prioritize premium service and comprehensive coverage" : insurer.priceRating === "Budget-Friendly" ? "budget-conscious drivers who need essential coverage" : "drivers seeking a good balance of price and coverage"}.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
