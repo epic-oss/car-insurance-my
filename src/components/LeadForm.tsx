@@ -51,16 +51,23 @@ export default function LeadForm({
     }
 
     try {
-      const payload = {
+      const payload: Record<string, string> = {
         timestamp: new Date().toISOString(),
         name: formData.name,
         phone: formData.phone.replace(/\s|-/g, ""),
         car_plate: formData.car_plate.toUpperCase(),
         postcode: formData.postcode,
         source_url: typeof window !== "undefined" ? window.location.href : "",
+        calculator_type: "car_insurance_my",
+        source: source,
         lead_type: "car_insurance",
         site: "carinsurancemy.com",
       };
+
+      // Only include insurer_name if provided
+      if (insurerName) {
+        payload.insurer_name = insurerName;
+      }
 
       const response = await fetch(
         "https://hook.us2.make.com/x41kcriuri5w5s8fkrfi6884hu05yhpe",
