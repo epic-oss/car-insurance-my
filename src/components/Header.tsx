@@ -10,8 +10,8 @@ export default function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Calculator", href: "/calculator/car-insurance-calculator" },
-    { name: "Compare", href: "/compare/best-car-insurance-malaysia" },
-    { name: "Guides", href: "/guide/ncd-explained" },
+    { name: "Compare", href: "/compare" },
+    { name: "Guides", href: "/guide" },
   ];
 
   return (

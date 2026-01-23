@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/compare`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/compare/best-car-insurance-malaysia`,
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -67,6 +73,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     // Guides
+    {
+      url: `${baseUrl}/guide`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     {
       url: `${baseUrl}/guide/cheapest-car-insurance-malaysia`,
       lastModified: new Date(),

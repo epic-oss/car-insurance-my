@@ -5,6 +5,7 @@ export default function Footer() {
 
   const footerLinks = {
     compare: [
+      { name: "All Reviews", href: "/compare" },
       { name: "Best Car Insurance Malaysia", href: "/compare/best-car-insurance-malaysia" },
       { name: "Etiqa Review", href: "/compare/etiqa-car-insurance-review" },
       { name: "Allianz Review", href: "/compare/allianz-car-insurance-review" },
@@ -13,6 +14,8 @@ export default function Footer() {
       { name: "Zurich Review", href: "/compare/zurich-car-insurance-review" },
     ],
     guides: [
+      { name: "All Guides", href: "/guide" },
+      { name: "Cheapest Car Insurance", href: "/guide/cheapest-car-insurance-malaysia" },
       { name: "Third Party vs Comprehensive", href: "/guide/third-party-vs-comprehensive" },
       { name: "NCD Explained", href: "/guide/ncd-explained" },
       { name: "How to Claim Insurance", href: "/guide/how-to-claim-car-insurance" },
