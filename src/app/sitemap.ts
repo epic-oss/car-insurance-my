@@ -53,6 +53,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    // Car Models
+    {
+      url: `${baseUrl}/car-models/myvi-insurance`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     // Guides
     {
       url: `${baseUrl}/guide/third-party-vs-comprehensive`,
