@@ -68,6 +68,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Guides
     {
+      url: `${baseUrl}/guide/cheapest-car-insurance-malaysia`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/guide/third-party-vs-comprehensive`,
       lastModified: new Date(),
       changeFrequency: "monthly",
