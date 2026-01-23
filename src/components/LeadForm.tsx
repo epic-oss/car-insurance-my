@@ -149,7 +149,7 @@ export default function LeadForm({
   }
 
   const inputClasses =
-    "w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent focus:bg-white outline-none transition-all";
+    "w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent focus:bg-white outline-none transition-all text-gray-900 placeholder:text-gray-400";
 
   return (
     <form
