@@ -15,13 +15,35 @@ export default function LeadForm({
 }: LeadFormProps) {
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    nric: "",
     car_plate: "",
     postcode: "",
+    phone: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+
+  // Format NRIC as user types (XXXXXX-XX-XXXX)
+  const formatNRIC = (value: string) => {
+    // Remove all non-digits
+    const digits = value.replace(/\D/g, "");
+
+    // Format with dashes
+    if (digits.length <= 6) {
+      return digits;
+    } else if (digits.length <= 8) {
+      return `${digits.slice(0, 6)}-${digits.slice(6)}`;
+    } else {
+      return `${digits.slice(0, 6)}-${digits.slice(6, 8)}-${digits.slice(8, 12)}`;
+    }
+  };
+
+  // Validate NRIC format (XXXXXX-XX-XXXX or 12 digits)
+  const isValidNRIC = (nric: string) => {
+    const digits = nric.replace(/\D/g, "");
+    return digits.length === 12;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,8 +51,15 @@ export default function LeadForm({
     setError("");
 
     // Validation
-    if (!formData.name || !formData.phone || !formData.car_plate || !formData.postcode) {
+    if (!formData.name || !formData.nric || !formData.phone || !formData.car_plate || !formData.postcode) {
       setError("Please fill in all fields");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // NRIC validation
+    if (!isValidNRIC(formData.nric)) {
+      setError("Please enter a valid 12-digit IC number");
       setIsSubmitting(false);
       return;
     }
@@ -54,6 +83,7 @@ export default function LeadForm({
       const payload: Record<string, string> = {
         timestamp: new Date().toISOString(),
         name: formData.name,
+        nric: formData.nric.replace(/\D/g, ""), // Send without dashes
         phone: formData.phone.replace(/\s|-/g, ""),
         car_plate: formData.car_plate.toUpperCase(),
         postcode: formData.postcode,
@@ -139,6 +169,7 @@ export default function LeadForm({
       )}
 
       <div className="space-y-4">
+        {/* 1. Full Name */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
             Full Name
@@ -146,13 +177,31 @@ export default function LeadForm({
           <input
             type="text"
             id="name"
-            placeholder="Enter your name"
+            placeholder="e.g., Ahmad bin Ali"
             className={inputClasses}
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
         </div>
 
+        {/* 2. IC Number (NRIC) */}
+        <div>
+          <label htmlFor="nric" className="block text-sm font-medium text-gray-700 mb-1">
+            IC Number (NRIC)
+          </label>
+          <input
+            type="text"
+            id="nric"
+            placeholder="e.g., 901231-14-5678"
+            className={inputClasses}
+            value={formData.nric}
+            onChange={(e) => setFormData({ ...formData, nric: formatNRIC(e.target.value) })}
+            maxLength={14}
+          />
+          <p className="text-xs text-gray-500 mt-1">Required to generate accurate quote</p>
+        </div>
+
+        {/* 3. Car Plate Number */}
         <div>
           <label htmlFor="car_plate" className="block text-sm font-medium text-gray-700 mb-1">
             Car Plate Number
@@ -169,6 +218,7 @@ export default function LeadForm({
           />
         </div>
 
+        {/* 4. Postcode and 5. WhatsApp Number */}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="postcode" className="block text-sm font-medium text-gray-700 mb-1">
@@ -189,7 +239,7 @@ export default function LeadForm({
 
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-              Phone Number
+              WhatsApp Number
             </label>
             <input
               type="tel"
