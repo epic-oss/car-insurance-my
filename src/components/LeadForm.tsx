@@ -100,7 +100,7 @@ export default function LeadForm({
       }
 
       const response = await fetch(
-        "https://hook.us2.make.com/x41kcriuri5w5s8fkrfi6884hu05yhpe",
+        "https://hook.us2.make.com/5kcnxdvv4yu49sar3fqin7ul081ginvn",
         {
           method: "POST",
           headers: {
@@ -142,7 +142,7 @@ export default function LeadForm({
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h3>
         <p className="text-gray-600">
-          We&apos;ve received your request. Our insurance advisor will contact you within 24 hours with your personalized quotes.
+          We&apos;ll WhatsApp you shortly.
         </p>
       </div>
     );
@@ -222,7 +222,7 @@ export default function LeadForm({
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="postcode" className="block text-sm font-medium text-gray-700 mb-1">
-              Postcode
+              Postcode (for Cover Note)
             </label>
             <input
               type="text"
