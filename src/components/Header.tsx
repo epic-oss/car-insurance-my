@@ -19,7 +19,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2">
               <Image
                 src="/images/logo/Carinsurancemy logo.png"
                 alt="CarInsuranceMY"
@@ -28,6 +28,10 @@ export default function Header() {
                 className="h-10 w-auto"
                 priority
               />
+              <span className="text-xl font-bold">
+                <span className="text-primary-800">CarInsurance</span>
+                <span className="text-secondary-600">MY</span>
+              </span>
             </Link>
           </div>
 
