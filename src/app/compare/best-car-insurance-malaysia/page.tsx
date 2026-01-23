@@ -63,6 +63,102 @@ const compareFaqs = [
   },
 ];
 
+const rankingCriteria = [
+  {
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+      </svg>
+    ),
+    title: "Claims Experience",
+    description: "We evaluate claim approval times, workshop network, and customer satisfaction.",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+    title: "Coverage Options",
+    description: "We assess coverage range from basic third-party to comprehensive plans with add-ons.",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: "Pricing & Value",
+    description: "We compare premium rates for similar coverage. Value for money matters most.",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    ),
+    title: "Customer Service",
+    description: "We consider feedback, complaint resolution, and digital platform quality.",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
+    title: "Financial Stability",
+    description: "We evaluate financial strength and claims-paying ability of each insurer.",
+  },
+];
+
+const choosingTips = [
+  {
+    icon: (
+      <svg className="w-6 h-6 text-primary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      </svg>
+    ),
+    title: "Compare Multiple Quotes",
+    description: "Premiums vary significantly between insurers for the same coverage.",
+    link: "/calculator/car-insurance-calculator",
+    linkText: "Use Our Calculator",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-primary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    title: "Check Workshop Network",
+    description: "Ensure the insurer has panel workshops convenient to your location.",
+    link: "/compare/best-car-insurance-malaysia",
+    linkText: "Compare Networks",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-primary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+      </svg>
+    ),
+    title: "Read Reviews",
+    description: "Look for feedback from actual policyholders about claims experience.",
+    link: "/compare/etiqa-car-insurance-review",
+    linkText: "Read Reviews",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-primary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: "Consider Add-ons",
+    description: "Some add-ons like windscreen are essential, others may be unnecessary.",
+    link: "/guide/third-party-vs-comprehensive",
+    linkText: "Learn More",
+  },
+];
+
 export default function ComparePage() {
   const topInsurers = getTopInsurers(10);
 
@@ -128,13 +224,13 @@ export default function ComparePage() {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center space-x-3">
-                        <div className="w-12 h-10 flex items-center justify-center">
+                        <div className="w-16 h-10 flex items-center justify-center flex-shrink-0">
                           <Image
                             src={insurer.logo}
                             alt={`${insurer.name} logo`}
-                            width={48}
+                            width={64}
                             height={40}
-                            className="object-contain max-h-[40px] w-auto"
+                            className="object-contain h-10 w-auto"
                           />
                         </div>
                         <div>
@@ -221,13 +317,13 @@ export default function ComparePage() {
                     <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-800 font-bold text-sm">
                       {index + 1}
                     </span>
-                    <div className="w-12 h-10 flex items-center justify-center">
+                    <div className="w-14 h-10 flex items-center justify-center flex-shrink-0">
                       <Image
                         src={insurer.logo}
                         alt={`${insurer.name} logo`}
-                        width={48}
+                        width={56}
                         height={40}
-                        className="object-contain max-h-[40px] w-auto"
+                        className="object-contain h-10 w-auto"
                       />
                     </div>
                     <div>
@@ -297,48 +393,85 @@ export default function ComparePage() {
         </div>
       </section>
 
-      {/* SEO Content */}
+      {/* Mid-Page CTA */}
+      <section className="py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-blue-900 to-blue-700 rounded-2xl p-8 text-center text-white">
+            <h3 className="text-2xl font-bold mb-3">Not sure which insurer is right for you?</h3>
+            <p className="text-blue-100 mb-6">Use our calculator to estimate your premium and compare quotes</p>
+            <Link
+              href="/calculator/car-insurance-calculator"
+              className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg transition"
+            >
+              Calculate Your Premium
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Rank Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
-            <h2>How We Rank Car Insurance Companies</h2>
-            <p>
-              Our rankings are based on comprehensive analysis of multiple factors that matter most to Malaysian drivers:
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">How We Rank Car Insurance Companies</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Our rankings are based on comprehensive analysis of multiple factors that matter most to Malaysian drivers.
             </p>
+          </div>
 
-            <h3>1. Claims Experience</h3>
-            <p>
-              We evaluate how quickly and efficiently each insurer processes claims. This includes claim approval times, workshop network quality, and customer satisfaction during the claims process.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {rankingCriteria.map((criteria, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow border border-gray-100"
+              >
+                <div className="w-12 h-12 bg-primary-800 rounded-full flex items-center justify-center mb-4">
+                  {criteria.icon}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{criteria.title}</h3>
+                <p className="text-gray-600 text-sm">{criteria.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tips for Choosing Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Tips for Choosing the Right Insurer</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Follow these tips to find the best car insurance for your needs and budget.
             </p>
+          </div>
 
-            <h3>2. Coverage Options</h3>
-            <p>
-              We assess the range of coverage options and add-ons available, from basic third-party to comprehensive plans with additional benefits like roadside assistance and windscreen coverage.
-            </p>
-
-            <h3>3. Pricing & Value</h3>
-            <p>
-              We compare premium rates across insurers for similar coverage levels. Value for money is key - the cheapest isn&apos;t always the best, and neither is the most expensive.
-            </p>
-
-            <h3>4. Customer Service</h3>
-            <p>
-              We consider customer feedback, complaint resolution, and the quality of support channels including phone, email, and digital platforms.
-            </p>
-
-            <h3>5. Financial Stability</h3>
-            <p>
-              We look at the financial strength and stability of each insurer, including their claims-paying ability and market reputation.
-            </p>
-
-            <h2>Tips for Choosing the Right Insurer</h2>
-            <ul>
-              <li><strong>Compare multiple quotes:</strong> Premiums can vary significantly between insurers for the same coverage.</li>
-              <li><strong>Check workshop networks:</strong> Ensure the insurer has panel workshops convenient to your location.</li>
-              <li><strong>Read reviews:</strong> Look for feedback from actual policyholders, especially about claims experience.</li>
-              <li><strong>Consider add-ons carefully:</strong> Some add-ons are essential (like windscreen), while others may be unnecessary for your situation.</li>
-              <li><strong>Don&apos;t just focus on price:</strong> The cheapest policy may not serve you well when you need to make a claim.</li>
-            </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {choosingTips.map((tip, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    {tip.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{tip.title}</h3>
+                    <p className="text-gray-600 text-sm mb-3">{tip.description}</p>
+                    <Link
+                      href={tip.link}
+                      className="inline-flex items-center text-primary-800 font-medium text-sm hover:text-primary-600 transition-colors"
+                    >
+                      {tip.linkText}
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
