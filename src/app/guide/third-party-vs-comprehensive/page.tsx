@@ -141,123 +141,346 @@ export default function ThirdPartyVsComprehensivePage() {
       {/* Main Content */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
-            <h2>Understanding Third Party Insurance</h2>
-            <p>
+
+          {/* Understanding Third Party Insurance */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Understanding Third Party Insurance</h2>
+            <p className="text-gray-600 mb-6">
               Third party car insurance is the minimum legal requirement in Malaysia under the Road Transport Act 1987. It provides basic protection against your liability if you cause damage to another person&apos;s property or vehicle.
             </p>
 
-            <h3>What Third Party Insurance Covers</h3>
-            <ul>
-              <li><strong>Third party property damage:</strong> Pays for repairs to other vehicles or property you damage in an accident</li>
-              <li><strong>Third party bodily injury:</strong> Covers medical expenses and compensation if you injure someone</li>
-              <li><strong>Legal defense costs:</strong> Covers legal fees if you&apos;re sued following an accident</li>
-            </ul>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* What it covers */}
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  What Third Party Covers
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <div>
+                      <span className="font-medium">Third party property damage</span>
+                      <p className="text-sm text-gray-500">Pays for repairs to other vehicles or property</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <div>
+                      <span className="font-medium">Third party bodily injury</span>
+                      <p className="text-sm text-gray-500">Covers medical expenses if you injure someone</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <div>
+                      <span className="font-medium">Legal defense costs</span>
+                      <p className="text-sm text-gray-500">Covers legal fees if you&apos;re sued</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
 
-            <h3>What Third Party Insurance Does NOT Cover</h3>
-            <ul>
-              <li>Damage to your own vehicle (regardless of who&apos;s at fault)</li>
-              <li>Theft of your vehicle</li>
-              <li>Fire damage to your vehicle</li>
-              <li>Natural disaster damage (flood, storm, etc.)</li>
-              <li>Personal accident benefits for yourself</li>
-            </ul>
+              {/* What it doesn't cover */}
+              <div className="bg-red-50 border border-red-200 rounded-xl p-6">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  What Third Party Does NOT Cover
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-red-500">✗</span>
+                    Damage to your own vehicle
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-red-500">✗</span>
+                    Theft of your vehicle
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-red-500">✗</span>
+                    Fire damage to your vehicle
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-red-500">✗</span>
+                    Natural disaster damage (flood, storm)
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-red-500">✗</span>
+                    Personal accident benefits for yourself
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-            <h2>Understanding Comprehensive Insurance</h2>
-            <p>
+          {/* Understanding Comprehensive Insurance */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Understanding Comprehensive Insurance</h2>
+            <p className="text-gray-600 mb-6">
               Comprehensive insurance provides the most complete protection for your vehicle. It includes everything covered by third party insurance, plus protection for your own vehicle against various risks.
             </p>
 
-            <h3>What Comprehensive Insurance Covers</h3>
-            <ul>
-              <li><strong>Everything in third party coverage</strong></li>
-              <li><strong>Own damage:</strong> Repairs to your car from accidents, regardless of fault</li>
-              <li><strong>Theft:</strong> Replacement value if your car is stolen</li>
-              <li><strong>Fire damage:</strong> Repairs or replacement due to fire</li>
-              <li><strong>Vandalism:</strong> Damage caused by vandals</li>
-            </ul>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* What it covers */}
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  What Comprehensive Covers
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-green-500">✓</span>
+                    <span className="font-medium">Everything in third party</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-green-500">✓</span>
+                    Own damage (regardless of fault)
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-green-500">✓</span>
+                    Theft of vehicle
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-green-500">✓</span>
+                    Fire damage
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-green-500">✓</span>
+                    Vandalism damage
+                  </li>
+                </ul>
+              </div>
 
-            <h3>Optional Add-ons for Comprehensive</h3>
-            <ul>
-              <li>Windscreen coverage (without affecting NCD)</li>
-              <li>Flood and natural disaster coverage</li>
-              <li>Personal accident coverage</li>
-              <li>24/7 roadside assistance</li>
-              <li>Car rental during repairs</li>
-              <li>All drivers coverage</li>
-            </ul>
+              {/* Optional add-ons */}
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                  Optional Add-ons Available
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-blue-500">+</span>
+                    Windscreen coverage (no NCD impact)
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-blue-500">+</span>
+                    Flood and natural disaster coverage
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-blue-500">+</span>
+                    Personal accident coverage
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-blue-500">+</span>
+                    24/7 roadside assistance
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-blue-500">+</span>
+                    Car rental during repairs
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <span className="text-blue-500">+</span>
+                    All drivers coverage
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-            <h2>Third Party, Fire & Theft (TPFT)</h2>
-            <p>
-              There&apos;s also a middle option called Third Party, Fire & Theft (TPFT). This covers:
-            </p>
-            <ul>
-              <li>Everything in third party coverage</li>
-              <li>Theft of your vehicle</li>
-              <li>Fire damage</li>
-            </ul>
-            <p>
-              However, TPFT does NOT cover damage from accidents. This option is less common in Malaysia but may be suitable for some drivers.
-            </p>
+          {/* Third Party Fire & Theft */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Third Party, Fire & Theft (TPFT)</h2>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+              <p className="text-gray-700 mb-4">
+                There&apos;s also a middle option called Third Party, Fire & Theft (TPFT). This covers:
+              </p>
+              <ul className="space-y-2 mb-4">
+                <li className="flex items-center gap-2 text-gray-700">
+                  <span className="text-green-500">✓</span>
+                  Everything in third party coverage
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <span className="text-green-500">✓</span>
+                  Theft of your vehicle
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <span className="text-green-500">✓</span>
+                  Fire damage
+                </li>
+              </ul>
+              <div className="bg-amber-100 rounded-lg p-3">
+                <p className="text-amber-800 text-sm">
+                  <strong>Note:</strong> TPFT does NOT cover damage from accidents. This option is less common in Malaysia but may be suitable for some drivers.
+                </p>
+              </div>
+            </div>
+          </div>
 
-            <h2>Cost Comparison</h2>
-            <p>
+          {/* Cost Comparison */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Cost Comparison</h2>
+            <p className="text-gray-600 mb-6">
               The cost difference between third party and comprehensive can be significant:
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Coverage Type</th>
-                  <th>Estimated Annual Premium</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Third Party Only</td>
-                  <td>~RM75 (fixed rate)</td>
-                </tr>
-                <tr>
-                  <td>Comprehensive (RM50k car)</td>
-                  <td>~RM800 - RM1,500</td>
-                </tr>
-                <tr>
-                  <td>Comprehensive (RM100k car)</td>
-                  <td>~RM1,500 - RM2,500</td>
-                </tr>
-              </tbody>
-            </table>
-            <p className="text-sm text-gray-600">
+            <div className="overflow-x-auto">
+              <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+                <thead className="bg-primary-800 text-white">
+                  <tr>
+                    <th className="px-6 py-4 text-left font-semibold">Coverage Type</th>
+                    <th className="px-6 py-4 text-left font-semibold">Estimated Annual Premium</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">Third Party Only</td>
+                    <td className="px-6 py-4">
+                      <span className="inline-flex px-3 py-1 text-sm font-semibold rounded-full bg-green-100 text-green-800">
+                        ~RM75 (fixed rate)
+                      </span>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">Comprehensive (RM50k car)</td>
+                    <td className="px-6 py-4">
+                      <span className="inline-flex px-3 py-1 text-sm font-semibold rounded-full bg-blue-100 text-blue-800">
+                        ~RM800 - RM1,500
+                      </span>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium text-gray-900">Comprehensive (RM100k car)</td>
+                    <td className="px-6 py-4">
+                      <span className="inline-flex px-3 py-1 text-sm font-semibold rounded-full bg-purple-100 text-purple-800">
+                        ~RM1,500 - RM2,500
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-gray-500 mt-4">
               * Actual premiums depend on NCD, vehicle type, and insurer
             </p>
-
-            <h2>Which Should You Choose?</h2>
-
-            <h3>Choose Third Party If:</h3>
-            <ul>
-              <li>Your car is very old (10+ years) with low market value</li>
-              <li>The market value is less than RM10,000</li>
-              <li>You have savings to cover repairs/replacement if needed</li>
-              <li>You mainly use your car for short, low-risk trips</li>
-            </ul>
-
-            <h3>Choose Comprehensive If:</h3>
-            <ul>
-              <li>Your car is relatively new (under 10 years old)</li>
-              <li>Your car has significant market value</li>
-              <li>You have a car loan (banks require comprehensive coverage)</li>
-              <li>You can&apos;t afford unexpected repair bills</li>
-              <li>You drive frequently or long distances</li>
-              <li>You park in public areas (higher theft/damage risk)</li>
-            </ul>
-
-            <h2>The Bottom Line</h2>
-            <p>
-              For most Malaysian drivers, <strong>comprehensive insurance is the better choice</strong>. The additional cost provides peace of mind knowing you&apos;re protected against a wide range of risks. The last thing you want is to be in an accident and find out you have to pay tens of thousands of ringgit for repairs.
-            </p>
-            <p>
-              However, if your car&apos;s value is very low and the comprehensive premium seems disproportionate, third party coverage may make financial sense.
-            </p>
           </div>
+
+          {/* Which Should You Choose */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Which Should You Choose?</h2>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Choose Third Party If */}
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">
+                    3P
+                  </span>
+                  Choose Third Party If:
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    Your car is very old (10+ years) with low market value
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    The market value is less than RM10,000
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    You have savings to cover repairs/replacement if needed
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    You mainly use your car for short, low-risk trips
+                  </li>
+                </ul>
+              </div>
+
+              {/* Choose Comprehensive If */}
+              <div className="bg-primary-50 rounded-xl border-2 border-primary-200 p-6">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center text-sm font-bold">
+                    C
+                  </span>
+                  Choose Comprehensive If:
+                  <span className="ml-auto text-xs bg-secondary-500 text-white px-2 py-1 rounded-full">
+                    Recommended
+                  </span>
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    Your car is relatively new (under 10 years old)
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    Your car has significant market value
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    You have a car loan (banks require comprehensive)
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    You can&apos;t afford unexpected repair bills
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    You drive frequently or long distances
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-700">
+                    <svg className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    You park in public areas (higher theft/damage risk)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* The Bottom Line */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Bottom Line</h2>
+            <div className="bg-green-50 border-l-4 border-green-500 rounded-r-xl p-6">
+              <p className="text-gray-700 mb-4">
+                For most Malaysian drivers, <strong className="text-gray-900">comprehensive insurance is the better choice</strong>. The additional cost provides peace of mind knowing you&apos;re protected against a wide range of risks.
+              </p>
+              <p className="text-gray-700 mb-4">
+                The last thing you want is to be in an accident and find out you have to pay tens of thousands of ringgit for repairs.
+              </p>
+              <p className="text-gray-600 text-sm">
+                However, if your car&apos;s value is very low and the comprehensive premium seems disproportionate, third party coverage may make financial sense.
+              </p>
+            </div>
+          </div>
+
         </div>
       </section>
 
