@@ -262,7 +262,7 @@ export default function ReviewPage({ insurer }: ReviewPageProps) {
             <div className="space-y-6">
               {/* CTA Card */}
               <div className="bg-gradient-to-br from-primary-800 to-primary-900 rounded-xl p-6 text-white sticky top-24">
-                <h3 className="text-xl font-bold mb-4">Get a {insurer.shortName} Quote</h3>
+                <h3 className="text-xl font-bold mb-4">Get {/^[aeiouAEIOU]/.test(insurer.shortName) ? "an" : "a"} {insurer.shortName} Quote</h3>
                 <p className="text-gray-300 mb-6">
                   Compare {insurer.shortName} with other insurers and find the best price for your car.
                 </p>

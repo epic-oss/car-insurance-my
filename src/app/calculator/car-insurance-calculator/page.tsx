@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
 import FAQ from "@/components/FAQ";
 
@@ -294,39 +295,131 @@ export default function CalculatorPage() {
       {/* SEO Content */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
-            <h2>Understanding Car Insurance Premiums in Malaysia</h2>
-            <p>
+          {/* Understanding Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Understanding Car Insurance Premiums in Malaysia</h2>
+            <p className="text-gray-600">
               Car insurance premiums in Malaysia are calculated based on a tariff system regulated by Bank Negara Malaysia (BNM). While the base rates are standardized, various factors can affect your final premium, making it important to compare quotes from multiple insurers.
             </p>
+          </div>
 
-            <h3>Key Factors Affecting Your Premium</h3>
-            <ul>
-              <li><strong>Sum Insured (Market Value):</strong> The higher your car&apos;s value, the higher the premium. This is the most significant factor in determining your cost.</li>
-              <li><strong>Engine Capacity:</strong> Vehicles with larger engines typically cost more to insure due to higher repair and replacement costs.</li>
-              <li><strong>Vehicle Age:</strong> Older vehicles may have lower market values but could have higher premiums due to increased risk of breakdowns.</li>
-              <li><strong>No Claim Discount (NCD):</strong> Up to 55% discount for 5+ years without claims. This is the biggest way to save on your premium.</li>
-              <li><strong>Coverage Type:</strong> Comprehensive coverage costs more than third-party only, but offers significantly better protection.</li>
-              <li><strong>Location:</strong> Some areas have higher premiums due to accident statistics and crime rates.</li>
-            </ul>
+          {/* Key Factors - Icon Cards Grid */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Factors Affecting Your Premium</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white border rounded-xl p-5">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold mb-2">Sum Insured (Market Value)</h3>
+                <p className="text-sm text-gray-600">The higher your car&apos;s value, the higher the premium. This is the most significant factor.</p>
+              </div>
 
-            <h3>Comprehensive vs Third Party Coverage</h3>
-            <p>
-              Comprehensive insurance covers damage to your own vehicle as well as third-party liability, including theft and natural disasters. Third-party insurance only covers damage you cause to other people&apos;s property and vehicles.
-            </p>
-            <p>
-              For most Malaysian drivers, especially those with newer vehicles, comprehensive coverage is recommended for the peace of mind it provides.
-            </p>
+              <div className="bg-white border rounded-xl p-5">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold mb-2">Engine Capacity</h3>
+                <p className="text-sm text-gray-600">Vehicles with larger engines typically cost more to insure due to higher repair costs.</p>
+              </div>
 
-            <h3>Tips to Lower Your Premium</h3>
-            <ol>
-              <li>Maintain a clean driving record to maximize your NCD</li>
-              <li>Choose a higher excess (the amount you pay in case of a claim)</li>
-              <li>Compare quotes from multiple insurers</li>
-              <li>Remove unnecessary add-ons</li>
-              <li>Install approved anti-theft devices</li>
-              <li>Consider usage-based insurance if you drive less frequently</li>
-            </ol>
+              <div className="bg-white border rounded-xl p-5">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold mb-2">Vehicle Age</h3>
+                <p className="text-sm text-gray-600">Older vehicles may have lower market values but could have higher premiums due to breakdown risk.</p>
+              </div>
+
+              <div className="bg-white border rounded-xl p-5">
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold mb-2">No Claim Discount (NCD)</h3>
+                <p className="text-sm text-gray-600">Up to 55% discount for 5+ years without claims. The biggest way to save.</p>
+              </div>
+
+              <div className="bg-white border rounded-xl p-5">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold mb-2">Coverage Type</h3>
+                <p className="text-sm text-gray-600">Comprehensive costs more than third-party only, but offers significantly better protection.</p>
+              </div>
+
+              <div className="bg-white border rounded-xl p-5">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold mb-2">Location</h3>
+                <p className="text-sm text-gray-600">Some areas have higher premiums due to accident statistics and crime rates.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Comprehensive vs Third Party - Callout Box */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Comprehensive vs Third Party Coverage</h2>
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+              <p className="text-gray-700 mb-4">
+                Comprehensive insurance covers damage to your own vehicle as well as third-party liability, including theft and natural disasters. Third-party insurance only covers damage you cause to other people&apos;s property and vehicles.
+              </p>
+              <p className="text-gray-700 font-medium">
+                For most Malaysian drivers, especially those with newer vehicles, comprehensive coverage is recommended for the peace of mind it provides.
+              </p>
+              <Link href="/guide/third-party-vs-comprehensive" className="inline-flex items-center text-blue-600 font-medium mt-3 hover:underline">
+                Learn more about coverage types →
+              </Link>
+            </div>
+          </div>
+
+          {/* Tips - Numbered List */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Tips to Lower Your Premium</h2>
+            <div className="space-y-3">
+              <div className="flex gap-4 items-start">
+                <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-600 font-bold">1</span>
+                <p className="font-medium pt-1">Maintain a clean driving record to maximize your NCD</p>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-600 font-bold">2</span>
+                <p className="font-medium pt-1">Choose a higher excess (the amount you pay in case of a claim)</p>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-600 font-bold">3</span>
+                <p className="font-medium pt-1">Compare quotes from multiple insurers</p>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-600 font-bold">4</span>
+                <p className="font-medium pt-1">Remove unnecessary add-ons</p>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-600 font-bold">5</span>
+                <p className="font-medium pt-1">Install approved anti-theft devices</p>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <span className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-600 font-bold">6</span>
+                <p className="font-medium pt-1">Consider usage-based insurance if you drive less frequently</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

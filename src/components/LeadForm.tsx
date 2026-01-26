@@ -8,6 +8,66 @@ interface LeadFormProps {
   insurerName?: string;
 }
 
+const STORAGE_KEY = "carinsurancemy_submissions";
+const DUPLICATE_WINDOW_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+interface StoredSubmission {
+  nric: string;
+  phone: string;
+  timestamp: number;
+}
+
+// Check if NRIC or phone was submitted in the last 24 hours
+function checkForDuplicate(nric: string, phone: string): boolean {
+  if (typeof window === "undefined") return false;
+
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (!stored) return false;
+
+    const submissions: StoredSubmission[] = JSON.parse(stored);
+    const now = Date.now();
+
+    // Clean up old entries and check for duplicates
+    const recentSubmissions = submissions.filter(
+      (s) => now - s.timestamp < DUPLICATE_WINDOW_MS
+    );
+
+    // Update storage with cleaned entries
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(recentSubmissions));
+
+    // Check if this NRIC or phone was recently submitted
+    const normalizedNric = nric.replace(/\D/g, "");
+    const normalizedPhone = phone.replace(/\s|-/g, "");
+
+    return recentSubmissions.some(
+      (s) => s.nric === normalizedNric || s.phone === normalizedPhone
+    );
+  } catch {
+    return false;
+  }
+}
+
+// Store submission to prevent duplicates
+function storeSubmission(nric: string, phone: string): void {
+  if (typeof window === "undefined") return;
+
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    const submissions: StoredSubmission[] = stored ? JSON.parse(stored) : [];
+
+    submissions.push({
+      nric: nric.replace(/\D/g, ""),
+      phone: phone.replace(/\s|-/g, ""),
+      timestamp: Date.now(),
+    });
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(submissions));
+  } catch {
+    // Ignore storage errors
+  }
+}
+
 export default function LeadForm({
   variant = "hero",
   source = "homepage",
@@ -22,6 +82,7 @@ export default function LeadForm({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isDuplicate, setIsDuplicate] = useState(false);
   const [error, setError] = useState("");
 
   // Format NRIC as user types (XXXXXX-XX-XXXX)
@@ -79,6 +140,14 @@ export default function LeadForm({
       return;
     }
 
+    // Check for duplicate submission
+    if (checkForDuplicate(formData.nric, formData.phone)) {
+      setIsDuplicate(true);
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const payload: Record<string, string> = {
         timestamp: new Date().toISOString(),
@@ -111,6 +180,8 @@ export default function LeadForm({
       );
 
       if (response.ok) {
+        // Store submission to prevent duplicates
+        storeSubmission(formData.nric, formData.phone);
         setIsSubmitted(true);
       } else {
         throw new Error("Failed to submit");
@@ -125,9 +196,9 @@ export default function LeadForm({
   if (isSubmitted) {
     return (
       <div className={`${variant === "hero" ? "bg-white rounded-2xl shadow-xl p-8" : "p-6"} text-center`}>
-        <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className={`w-16 h-16 ${isDuplicate ? "bg-blue-100" : "bg-secondary-100"} rounded-full flex items-center justify-center mx-auto mb-4`}>
           <svg
-            className="w-8 h-8 text-secondary-600"
+            className={`w-8 h-8 ${isDuplicate ? "text-blue-600" : "text-secondary-600"}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -140,9 +211,13 @@ export default function LeadForm({
             />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h3>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">
+          {isDuplicate ? "Already Submitted!" : "Thank You!"}
+        </h3>
         <p className="text-gray-600">
-          We&apos;ll WhatsApp you shortly.
+          {isDuplicate
+            ? "You've already submitted a quote request. We'll contact you shortly!"
+            : "We'll WhatsApp you shortly."}
         </p>
       </div>
     );
