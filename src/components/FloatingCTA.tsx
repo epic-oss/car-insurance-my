@@ -22,7 +22,7 @@ export default function FloatingCTA() {
   const [formData, setFormData] = useState({
     name: "",
     nric: "",
-    carPlate: "",
+    car_plate: "",
     postcode: "",
     phone: "",
   });
@@ -87,7 +87,7 @@ export default function FloatingCTA() {
   const closeModal = () => {
     setIsModalOpen(false);
     setIsSubmitted(false);
-    setFormData({ name: "", nric: "", carPlate: "", postcode: "", phone: "" });
+    setFormData({ name: "", nric: "", car_plate: "", postcode: "", phone: "" });
   };
 
   const proof = socialProofMessages[currentProof];
@@ -232,8 +232,8 @@ export default function FloatingCTA() {
                     </label>
                     <input
                       type="text"
-                      name="carPlate"
-                      value={formData.carPlate}
+                      name="car_plate"
+                      value={formData.car_plate}
                       onChange={handleChange}
                       required
                       placeholder="WXY 1234"
