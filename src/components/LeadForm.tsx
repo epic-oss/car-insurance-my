@@ -42,6 +42,13 @@ export default function LeadForm({
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Prevent empty submissions
+    if (!formData.name || !formData.phone) {
+      alert("Please fill in all required fields.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const payload: Record<string, string> = {
         timestamp: new Date().toISOString(),
@@ -58,6 +65,8 @@ export default function LeadForm({
       if (insurerName) {
         payload.insurer_name = insurerName;
       }
+
+      console.log("[LeadForm] Submitting:", payload);
 
       await fetch(WEBHOOK_URL, {
         method: "POST",

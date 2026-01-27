@@ -60,16 +60,32 @@ export default function FloatingCTA() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Prevent empty submissions
+    if (!formData.name || !formData.phone) {
+      alert("Please fill in all required fields.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
+      const payload = {
+        name: formData.name,
+        nric: formData.nric,
+        car_plate: formData.car_plate.toUpperCase(),
+        postcode: formData.postcode,
+        phone: formData.phone,
+        source: "Floating CTA",
+        source_url: window.location.href,
+        timestamp: new Date().toISOString(),
+      };
+
+      console.log("[FloatingCTA] Submitting:", payload);
+
       await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          source: "Floating CTA",
-          sourceUrl: window.location.href,
-          timestamp: new Date().toISOString(),
-        }),
+        body: JSON.stringify(payload),
       });
       setIsSubmitted(true);
     } catch (error) {
