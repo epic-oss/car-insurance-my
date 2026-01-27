@@ -108,11 +108,13 @@ export default function LeadForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("[LeadForm] handleSubmit called", { formData, source });
     setIsSubmitting(true);
     setError("");
 
     // Validation
     if (!formData.name || !formData.nric || !formData.phone || !formData.car_plate || !formData.postcode) {
+      console.log("[LeadForm] Validation failed: missing fields");
       setError("Please fill in all fields");
       setIsSubmitting(false);
       return;
@@ -120,6 +122,7 @@ export default function LeadForm({
 
     // NRIC validation
     if (!isValidNRIC(formData.nric)) {
+      console.log("[LeadForm] Validation failed: invalid NRIC");
       setError("Please enter a valid 12-digit IC number");
       setIsSubmitting(false);
       return;
@@ -128,6 +131,7 @@ export default function LeadForm({
     // Phone validation (Malaysian format)
     const phoneRegex = /^(\+?6?01)[0-9]{8,9}$/;
     if (!phoneRegex.test(formData.phone.replace(/\s|-/g, ""))) {
+      console.log("[LeadForm] Validation failed: invalid phone");
       setError("Please enter a valid Malaysian phone number");
       setIsSubmitting(false);
       return;
@@ -135,6 +139,7 @@ export default function LeadForm({
 
     // Postcode validation (5 digits)
     if (!/^\d{5}$/.test(formData.postcode)) {
+      console.log("[LeadForm] Validation failed: invalid postcode");
       setError("Please enter a valid 5-digit postcode");
       setIsSubmitting(false);
       return;
@@ -142,6 +147,7 @@ export default function LeadForm({
 
     // Check for duplicate submission
     if (checkForDuplicate(formData.nric, formData.phone)) {
+      console.log("[LeadForm] Duplicate detected - skipping webhook");
       setIsDuplicate(true);
       setIsSubmitted(true);
       setIsSubmitting(false);
@@ -168,6 +174,8 @@ export default function LeadForm({
         payload.insurer_name = insurerName;
       }
 
+      console.log("[LeadForm] Sending to webhook:", payload);
+
       await fetch(
         "https://hook.us2.make.com/5kcnxdvv4yu49sar3fqin7ul081ginvn",
         {
@@ -179,11 +187,13 @@ export default function LeadForm({
         }
       );
 
+      console.log("[LeadForm] Webhook call completed successfully");
+
       // Store submission to prevent duplicates
       storeSubmission(formData.nric, formData.phone);
       setIsSubmitted(true);
     } catch (error) {
-      console.error("Form submission error:", error);
+      console.error("[LeadForm] Form submission error:", error);
       setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
