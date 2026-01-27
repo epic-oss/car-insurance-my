@@ -168,7 +168,7 @@ export default function LeadForm({
         payload.insurer_name = insurerName;
       }
 
-      const response = await fetch(
+      await fetch(
         "https://hook.us2.make.com/5kcnxdvv4yu49sar3fqin7ul081ginvn",
         {
           method: "POST",
@@ -179,14 +179,11 @@ export default function LeadForm({
         }
       );
 
-      if (response.ok) {
-        // Store submission to prevent duplicates
-        storeSubmission(formData.nric, formData.phone);
-        setIsSubmitted(true);
-      } else {
-        throw new Error("Failed to submit");
-      }
-    } catch {
+      // Store submission to prevent duplicates
+      storeSubmission(formData.nric, formData.phone);
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Form submission error:", error);
       setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
