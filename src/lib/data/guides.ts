@@ -1292,6 +1292,444 @@ export const guides: Record<string, Guide> = {
     ctaDescription:
       "Compare prices from 15+ insurers and find the best rate for your car.",
   },
+
+  "best-ev-car-insurance-malaysia": {
+    id: "best-ev-car-insurance-malaysia",
+    slug: "best-ev-car-insurance-malaysia",
+    title: "Best EV Car Insurance Malaysia: Compare Top 5 Plans",
+    subtitle:
+      "Compare Malaysia's top EV insurance plans from Allianz, MSIG, Liberty, Etiqa & Tokio Marine. Find coverage for battery, home charger, roadside charging & more.",
+    lastUpdated: new Date().toISOString().split("T")[0],
+    readTime: "10 min read",
+    metaTitle: `Best EV Car Insurance Malaysia ${new Date().getFullYear()} - Compare Top 5 Plans`,
+    metaDescription:
+      "Compare Malaysia's top EV insurance plans from Allianz, MSIG, Liberty, Etiqa & Tokio Marine. Find coverage for battery, home charger, roadside charging & more.",
+    keywords: [
+      "ev car insurance malaysia",
+      "electric car insurance",
+      "byd insurance malaysia",
+      "tesla insurance malaysia",
+      "ev charger coverage",
+      "best ev insurance",
+    ],
+    sections: [
+      {
+        id: "intro",
+        title: "Why EV Insurance is Different",
+        type: "text",
+        content: [
+          "Electric vehicles have unique insurance needs that regular car insurance doesn't fully address. EVs come with **expensive batteries** (RM30,000-50,000 to replace), **home charging equipment**, and **specialized repair requirements** that traditional policies weren't designed to cover.",
+          "The good news: several Malaysian insurers now offer **EV-specific coverage** with benefits like home charger protection, portable cable coverage, and even roadside charging assistance. These add-ons address the unique risks of EV ownership.",
+          "This guide compares the **top 5 EV insurance options** in Malaysia to help you choose the right coverage for your electric vehicle.",
+        ],
+      },
+      {
+        id: "quick-comparison",
+        title: "Quick Comparison: Top 5 EV Insurance Plans",
+        type: "table",
+        tableData: {
+          headers: [
+            "Insurer",
+            "Product Name",
+            "Extra Cost",
+            "Home Charger",
+            "Portable Cable",
+            "Roadside Charging",
+          ],
+          rows: [
+            [
+              "Allianz",
+              { text: "EV Shield", badge: "Best Overall", badgeColor: "green" },
+              "FREE",
+              "RM15,000",
+              "RM2,000",
+              "Yes (4 cities)",
+            ],
+            ["MSIG", "EV Plus", "Add-on fee", "RM20,000", "RM5,000", "No"],
+            [
+              "Liberty",
+              "InsureMyTesla",
+              "Included",
+              "RM12,000",
+              "No",
+              "Tow to station",
+            ],
+            ["Etiqa", "EV Home Charger", "FREE (new EVs)", "RM12,000", "RM2,000", "No"],
+            [
+              "Tokio Marine",
+              "Custom",
+              "Varies",
+              "Case-by-case",
+              "Case-by-case",
+              "No",
+            ],
+          ],
+          footnote:
+            "* Coverage limits and availability subject to terms and conditions",
+        },
+      },
+      {
+        id: "allianz-review",
+        title: "1. Allianz EV Shield - Best Overall",
+        type: "comparison",
+        cards: [
+          {
+            title: "Allianz EV Shield",
+            icon: "A",
+            iconColor: "primary",
+            highlighted: true,
+            badge: "Best Overall",
+            items: [
+              {
+                text: "FREE with any Comprehensive Private Car policy",
+                checked: true,
+              },
+              {
+                text: "On-the-spot mobile charging via 'Allianz EV Rangers'",
+                checked: true,
+              },
+              { text: "RM15,000 home charger coverage", checked: true },
+              { text: "RM2,000 portable charging cable", checked: true },
+              { text: "RM5,000 public charger mishap coverage", checked: true },
+              { text: "RM50,000 third-party liability from charger", checked: true },
+              { text: "24hr towing to nearest charging station", checked: true },
+            ],
+            footer:
+              "Available in: Klang Valley, Penang, Kuantan, Johor Bahru",
+          },
+          {
+            title: "Best For",
+            iconColor: "green",
+            items: [
+              {
+                text: "Drivers wanting complete coverage at no extra cost",
+                checked: true,
+              },
+              {
+                text: "Those in Klang Valley, Penang, JB, or Kuantan",
+                checked: true,
+              },
+              { text: "Anyone who wants on-the-spot mobile charging", checked: true },
+            ],
+          },
+        ],
+      },
+      {
+        id: "msig-review",
+        title: "2. MSIG EV Plus - Highest Charger Coverage",
+        type: "comparison",
+        cards: [
+          {
+            title: "MSIG EV Plus",
+            icon: "M",
+            iconColor: "blue",
+            items: [
+              { text: "Add-on to base MSIG motor policy", checked: true },
+              {
+                text: "RM20,000 home charger coverage (highest in market)",
+                checked: true,
+              },
+              { text: "RM5,000 portable cable coverage (highest)", checked: true },
+              { text: "RM50,000 personal liability from charger use", checked: true },
+              { text: "RM3,000 repair allowance", checked: true },
+              { text: "RM5,000 public charging station incident allowance", checked: true },
+              { text: "No roadside charging service", checked: false },
+            ],
+            footer: "Requires additional premium for EV Plus add-on",
+          },
+          {
+            title: "Best For",
+            iconColor: "green",
+            items: [
+              { text: "EV owners with expensive home charging setups", checked: true },
+              { text: "Those wanting maximum charger coverage", checked: true },
+              { text: "Premium home wallbox owners (RM10,000+)", checked: true },
+            ],
+          },
+        ],
+      },
+      {
+        id: "liberty-review",
+        title: "3. Liberty InsureMyTesla - Tesla Owners Only",
+        type: "comparison",
+        cards: [
+          {
+            title: "Liberty InsureMyTesla",
+            icon: "L",
+            iconColor: "red",
+            items: [
+              { text: "Tesla's official insurance partner in Malaysia", checked: true },
+              { text: "Exclusive to new Tesla vehicles", checked: true },
+              { text: "RM12,000 private charger coverage", checked: true },
+              {
+                text: "24hr towing to charging station (up to 3x/year)",
+                checked: true,
+              },
+              { text: "Key repair/replacement up to RM1,000", checked: true },
+              { text: "12-month workmanship warranty on repairs", checked: true },
+              { text: "5% discount if financed through AmBank", checked: true },
+              { text: "No portable cable coverage", checked: false },
+            ],
+            footer: "Also available in Hong Kong, Singapore, Thailand",
+          },
+          {
+            title: "Best For",
+            iconColor: "green",
+            items: [
+              { text: "New Tesla owners", checked: true },
+              { text: "Those wanting manufacturer-aligned coverage", checked: true },
+              { text: "AmBank financing customers (5% discount)", checked: true },
+            ],
+          },
+        ],
+      },
+      {
+        id: "etiqa-review",
+        title: "4. Etiqa EV Insurance - Takaful Option Available",
+        type: "comparison",
+        cards: [
+          {
+            title: "Etiqa EV Insurance",
+            icon: "E",
+            iconColor: "amber",
+            items: [
+              {
+                text: "First Malaysian insurer with EV charger coverage (2022)",
+                checked: true,
+              },
+              { text: "Tesla Ensure package for Tesla owners", checked: true },
+              { text: "RM12,000 home charger coverage", checked: true },
+              { text: "RM2,000 portable cable coverage (add-on)", checked: true },
+              { text: "PA coverage up to RM18,000", checked: true },
+              { text: "Flood relief allowance included", checked: true },
+              {
+                text: "Takaful option (Etiqa General Takaful)",
+                checked: true,
+              },
+              { text: "No roadside charging service", checked: false },
+            ],
+            footer: "FREE for new EV purchases, add-on fee for others",
+          },
+          {
+            title: "Best For",
+            iconColor: "green",
+            items: [
+              { text: "Muslim drivers wanting Shariah-compliant coverage", checked: true },
+              { text: "Tesla owners (Tesla Ensure package)", checked: true },
+              { text: "New EV buyers (free coverage)", checked: true },
+            ],
+          },
+        ],
+      },
+      {
+        id: "tokio-marine-review",
+        title: "5. Tokio Marine - Custom Endorsements",
+        type: "comparison",
+        cards: [
+          {
+            title: "Tokio Marine",
+            icon: "T",
+            iconColor: "purple",
+            items: [
+              { text: "No dedicated EV product yet", checked: false },
+              { text: "Custom endorsements on case-by-case basis", checked: true },
+              { text: "Charger coverage available upon request", checked: true },
+              { text: "Flexible terms negotiable", checked: true },
+              { text: "No standard EV add-on pricing", checked: false },
+            ],
+            footer: "Contact Tokio Marine directly to discuss EV coverage",
+          },
+          {
+            title: "Best For",
+            iconColor: "green",
+            items: [
+              { text: "Existing Tokio Marine customers", checked: true },
+              { text: "Those wanting customized coverage", checked: true },
+              { text: "Drivers willing to negotiate terms", checked: true },
+            ],
+          },
+        ],
+      },
+      {
+        id: "ev-coverage-explained",
+        title: "What EV Insurance Covers (That Regular Insurance Doesn't)",
+        type: "tipGrid",
+        columns: 2,
+        tips: [
+          {
+            icon: "🔌",
+            title: "Home Wall Charger",
+            description:
+              "Protection against fire, lightning, theft, and natural disasters for your home charging unit",
+          },
+          {
+            icon: "🔋",
+            title: "Portable Charging Cable",
+            description:
+              "Coverage for loss or damage to your mobile charging cable",
+          },
+          {
+            icon: "⚡",
+            title: "Public Charging Incidents",
+            description:
+              "Protection if something goes wrong at a public charging station",
+          },
+          {
+            icon: "🛡️",
+            title: "Third-Party Charger Liability",
+            description:
+              "Coverage if your charger causes damage to others or their property",
+          },
+          {
+            icon: "🔧",
+            title: "Battery-Specific Coverage",
+            description:
+              "Protection for expensive EV battery repairs from accidents",
+          },
+          {
+            icon: "🚗",
+            title: "Towing to Charging Station",
+            description:
+              "Specialized towing service to nearest charger (not just workshop)",
+          },
+        ],
+      },
+      {
+        id: "cost-examples",
+        title: "EV Insurance Cost Examples",
+        type: "table",
+        description:
+          "Typical annual premiums for popular EVs in Malaysia",
+        tableData: {
+          headers: ["EV Model", "Market Value", "Annual Premium Range"],
+          rows: [
+            [
+              "BYD Atto 3",
+              "RM124,000 - RM168,000",
+              { text: "RM2,000 - RM4,100/year", badgeColor: "green" },
+            ],
+            [
+              "Tesla Model 3",
+              "RM189,000+",
+              { text: "RM5,100 - RM5,900/year", badgeColor: "blue" },
+            ],
+            [
+              "Tesla Model Y",
+              "RM199,000+",
+              { text: "RM5,400 - RM7,700/year", badgeColor: "purple" },
+            ],
+          ],
+          footnote:
+            "* EV insurance premiums are typically 10-20% higher than equivalent petrol cars due to expensive battery repairs",
+        },
+      },
+      {
+        id: "premium-note",
+        title: "",
+        type: "callout",
+        variant: "info",
+        title2: "Why EV Insurance Costs More",
+        content:
+          "EV insurance premiums are typically **10-20% higher** than comparable petrol cars. This is due to expensive battery replacement costs (RM30,000-50,000), specialized repair requirements, and higher vehicle market values. However, EVs save money on **road tax (RM0)** and fuel costs, which can offset the higher insurance premium.",
+      },
+      {
+        id: "how-to-choose",
+        title: "How to Choose Your EV Insurance",
+        type: "numberedList",
+        steps: [
+          {
+            number: 1,
+            title: "Tesla Owner?",
+            description:
+              "Consider Liberty InsureMyTesla or Etiqa Tesla Ensure for manufacturer-aligned coverage",
+            tips: [],
+          },
+          {
+            number: 2,
+            title: "Want Free EV Coverage?",
+            description:
+              "Choose Allianz EV Shield - it's completely free with any comprehensive policy",
+            tips: [],
+          },
+          {
+            number: 3,
+            title: "Expensive Home Charger?",
+            description:
+              "Go with MSIG EV Plus for the highest charger coverage (RM20,000)",
+            tips: [],
+          },
+          {
+            number: 4,
+            title: "Need Takaful / Islamic Option?",
+            description:
+              "Etiqa General Takaful offers Shariah-compliant EV coverage",
+            tips: [],
+          },
+          {
+            number: 5,
+            title: "Already with Tokio Marine?",
+            description:
+              "Ask your agent about custom EV endorsements to add charger coverage",
+            tips: [],
+          },
+        ],
+      },
+      {
+        id: "recommendation",
+        title: "",
+        type: "callout",
+        variant: "success",
+        title2: "Our Top Pick",
+        content:
+          "**Allianz EV Shield** is the best overall choice for most EV owners in Malaysia. It's **completely free**, offers comprehensive coverage including on-the-spot mobile charging, and is available from one of Malaysia's most established insurers. The only consideration is that roadside charging is currently limited to Klang Valley, Penang, Kuantan, and Johor Bahru.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is EV insurance more expensive than regular car insurance?",
+        answer:
+          "Yes, EV insurance is typically 10-20% higher than comparable petrol cars. This is due to expensive battery replacement costs (RM30,000-50,000), specialized repair requirements, and higher vehicle market values. However, you save on road tax (RM0 for EVs) and fuel costs.",
+      },
+      {
+        question: "Does regular car insurance cover my EV?",
+        answer:
+          "Basic comprehensive car insurance will cover your EV for standard risks like accidents, theft, and fire. However, it won't cover EV-specific items like your home charger, portable charging cable, or provide specialized services like towing to charging stations. You should add EV-specific coverage for complete protection.",
+      },
+      {
+        question: "What if my EV battery catches fire?",
+        answer:
+          "Battery fire damage is covered under comprehensive car insurance. However, check your policy's exclusions as some insurers may have specific terms for battery-related incidents. EVs actually have a lower fire risk than petrol cars statistically, but EV fires can be more difficult to extinguish.",
+      },
+      {
+        question: "Can I insure a used EV?",
+        answer:
+          "Yes, you can insure a used EV with comprehensive or third party coverage. However, some EV-specific add-ons (like Etiqa's free charger coverage) may only be available for new EV purchases. Used EV owners can still add charger coverage for an additional premium.",
+      },
+      {
+        question: "Is my home charger covered by home insurance or car insurance?",
+        answer:
+          "EV charger coverage is typically provided through car insurance add-ons, not home insurance. The EV insurance add-ons from Allianz, MSIG, Liberty, and Etiqa specifically cover your home charging equipment against damage, theft, fire, and electrical issues.",
+      },
+      {
+        question: "What happens if I run out of battery on the highway?",
+        answer:
+          "If you have Allianz EV Shield, you can call for mobile charging assistance (in covered areas). Other insurers provide towing to the nearest charging station. Liberty InsureMyTesla offers up to 3 complimentary tows per year for flat battery situations.",
+      },
+      {
+        question: "Do I need special coverage for public charging?",
+        answer:
+          "Yes, incidents at public charging stations (like damage from faulty equipment) are covered by EV insurance add-ons. Allianz offers RM5,000 for public charger mishaps, and MSIG provides RM5,000 public charging station incident allowance.",
+      },
+      {
+        question: "Which insurer is best for Tesla in Malaysia?",
+        answer:
+          "Liberty InsureMyTesla is Tesla's official insurance partner in Malaysia, offering Tesla-specific benefits. Etiqa also has a dedicated Tesla Ensure package. Both provide coverage aligned with Tesla's repair requirements and service network.",
+      },
+    ],
+    ctaTitle: "Get Your Free EV Insurance Quote",
+    ctaDescription:
+      "Compare EV-specific coverage from top insurers and protect your electric vehicle.",
+  },
 };
 
 // Helper functions
@@ -1349,5 +1787,13 @@ export const guidesPreviews: GuidePreview[] = [
     description: "Find the lowest rates and tips to save money",
     icon: "money",
     color: "amber",
+  },
+  {
+    id: "best-ev-car-insurance-malaysia",
+    slug: "best-ev-car-insurance-malaysia",
+    title: "Best EV Car Insurance Malaysia",
+    description: "Compare top 5 EV insurance plans with charger coverage",
+    icon: "bolt",
+    color: "green",
   },
 ];

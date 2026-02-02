@@ -1,14 +1,8 @@
 import Image from "next/image";
 
 const insurers = [
-  { name: "Allianz", logo: "/images/insurers/allianz.png" },
-  { name: "Etiqa", logo: "/images/insurers/etiqa.png" },
-  { name: "AXA", logo: "/images/insurers/axa.png" },
-  { name: "Tokio Marine", logo: "/images/insurers/Tokio Marine.avif" },
   { name: "Zurich", logo: "/images/insurers/zurich.png" },
-  { name: "Lonpac", logo: "/images/insurers/lonpac.png" },
-  { name: "RHB", logo: "/images/insurers/rhb.png" },
-  { name: "MSIG", logo: "/images/insurers/msig.png" },
+  { name: "Allianz", logo: "/images/insurers/allianz.png" },
 ];
 
 export default function InsurerLogos() {
@@ -16,20 +10,20 @@ export default function InsurerLogos() {
     <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-gray-600 mb-8">
-          Compare quotes from Malaysia&apos;s leading insurers
+          We specialize in Malaysia&apos;s most trusted insurers
         </p>
-        <div className="grid grid-cols-4 md:grid-cols-8 gap-6 items-center">
+        <div className="flex justify-center items-center gap-12">
           {insurers.map((insurer) => (
             <div
               key={insurer.name}
-              className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow h-20"
+              className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow h-24 w-48"
             >
               <Image
                 src={insurer.logo}
                 alt={`${insurer.name} car insurance logo`}
-                width={120}
-                height={50}
-                className="object-contain max-h-[50px] w-auto"
+                width={160}
+                height={60}
+                className="object-contain max-h-[60px] w-auto"
               />
             </div>
           ))}

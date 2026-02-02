@@ -18,6 +18,7 @@ export default function Header() {
     car_plate: "",
     postcode: "",
     phone: "",
+    priority: "",
   });
 
   const navigation = [
@@ -56,6 +57,7 @@ export default function Header() {
         car_plate: formData.car_plate.toUpperCase(),
         postcode: formData.postcode,
         phone: formData.phone,
+        priority: formData.priority,
         source: "Header CTA",
         source_url: window.location.href,
         timestamp: new Date().toISOString(),
@@ -89,7 +91,7 @@ export default function Header() {
   const closeModal = () => {
     setIsModalOpen(false);
     setIsSubmitted(false);
-    setFormData({ name: "", nric: "", car_plate: "", postcode: "", phone: "" });
+    setFormData({ name: "", nric: "", car_plate: "", postcode: "", phone: "", priority: "" });
   };
 
   return (
@@ -205,8 +207,8 @@ export default function Header() {
           className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4"
           onClick={(e) => e.target === e.currentTarget && closeModal()}
         >
-          <div className="bg-white rounded-2xl w-full max-w-md shadow-2xl animate-fade-in">
-            <div className="flex items-center justify-between p-4 border-b">
+          <div className="bg-white rounded-2xl w-full max-w-md shadow-2xl animate-fade-in max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between p-4 border-b sticky top-0 bg-white rounded-t-2xl">
               <h2 className="text-lg font-bold text-gray-900">
                 Get Your Free Quote
               </h2>
@@ -335,6 +337,31 @@ export default function Header() {
                         placeholder="012-3456789"
                         className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      What matters most to you?
+                    </label>
+                    <div className="space-y-2">
+                      {[
+                        { value: "price", label: "Lowest price possible" },
+                        { value: "service", label: "Good service & claims support" },
+                        { value: "both", label: "Both equally" },
+                      ].map((option) => (
+                        <label key={option.value} className="flex items-center space-x-3 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="priority"
+                            value={option.value}
+                            checked={formData.priority === option.value}
+                            onChange={handleChange}
+                            required
+                            className="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500"
+                          />
+                          <span className="text-sm text-gray-700">{option.label}</span>
+                        </label>
+                      ))}
                     </div>
                   </div>
                   <button

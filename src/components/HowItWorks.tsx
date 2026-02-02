@@ -1,9 +1,9 @@
 const steps = [
   {
     number: "1",
-    title: "Enter Your Details",
+    title: "Tell Us About Your Car",
     description:
-      "Provide your car plate number, postcode, and contact details. It only takes 60 seconds.",
+      "Share your details and we'll find the right coverage for your vehicle and needs.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
@@ -17,25 +17,25 @@ const steps = [
   },
   {
     number: "2",
-    title: "Compare Quotes",
+    title: "Get Expert Recommendation",
     description:
-      "Receive personalized quotes from 15+ insurers. Compare coverage, benefits, and prices side by side.",
+      "We'll suggest the best policy based on your needs, not just price.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
         />
       </svg>
     ),
   },
   {
     number: "3",
-    title: "Get Covered",
+    title: "Enjoy Peace of Mind",
     description:
-      "Choose your preferred insurer and complete your purchase. Your policy is activated instantly.",
+      "24-hour support for claims, renewals, and emergencies. We're always here for you.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path

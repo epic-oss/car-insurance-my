@@ -9,16 +9,16 @@ import FloatingCTA from "@/components/FloatingCTA";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Compare Car Insurance Malaysia | Get Free Quotes in 60 Seconds",
-  description: "Compare car insurance quotes from 15+ top insurers in Malaysia. BNM licensed partners. Save up to RM500 on your car insurance renewal. Get free quotes now!",
-  keywords: "car insurance Malaysia, car insurance comparison, cheap car insurance, motor insurance, Allianz, Etiqa, AXA, Tokio Marine",
+  title: "Car Insurance Malaysia 2026 - Expert Service & 24-Hour Claims Support | CarInsuranceMY",
+  description: "Get car insurance with dedicated claims support. 1,000+ claims handled. Specialized in Zurich & Allianz. 24-hour emergency assistance. Get your free quote today.",
+  keywords: "car insurance Malaysia, car insurance claims support, Zurich car insurance, Allianz car insurance, motor insurance Malaysia, 24 hour claims support",
   icons: {
     icon: "/images/logo/Carinsurancemy logo.png",
     apple: "/images/logo/Carinsurancemy logo.png",
   },
   openGraph: {
-    title: "Compare Car Insurance Malaysia | CarInsuranceMY",
-    description: "Compare car insurance quotes from 15+ top insurers. Save up to RM500 on your renewal!",
+    title: "Car Insurance Malaysia - Expert Service & 24-Hour Claims Support | CarInsuranceMY",
+    description: "Get car insurance with dedicated claims support. 1,000+ claims handled. Specialized in Zurich & Allianz. 24-hour emergency assistance.",
     type: "website",
     locale: "en_MY",
     siteName: "CarInsuranceMY",

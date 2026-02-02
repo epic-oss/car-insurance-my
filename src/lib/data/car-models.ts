@@ -606,6 +606,120 @@ export const carModels: Record<string, CarModel> = {
     ],
     updatedAt: "2026-01-25",
   },
+  "byd-atto-3": {
+    id: "byd-atto-3",
+    name: "BYD Atto 3",
+    shortName: "Atto 3",
+    brand: "BYD",
+    slug: "byd-atto-3-insurance",
+    tagline: "Malaysia's Best-Selling Electric SUV",
+    heroSubtitle:
+      "Find out how much insurance costs for BYD Atto 3 Standard Range & Extended Range variants. Compare EV-specific coverage from 15+ insurers.",
+    minPrice: 1800,
+    variants: [
+      {
+        name: "Atto 3 Standard Range",
+        engine: "Electric (49.92 kWh)",
+        cc: 0, // EV - no engine cc
+        marketValue: 150000,
+        comprehensiveRange: [1800, 2800],
+        thirdPartyRange: [300, 450],
+        roadTax: 0, // EVs exempt from road tax
+      },
+      {
+        name: "Atto 3 Extended Range",
+        engine: "Electric (60.48 kWh)",
+        cc: 0, // EV - no engine cc
+        marketValue: 170000,
+        comprehensiveRange: [2000, 3100],
+        thirdPartyRange: [320, 480],
+        roadTax: 0, // EVs exempt from road tax
+      },
+    ],
+    variantGroups: [
+      {
+        id: "atto3-standard",
+        title: "Atto 3 Standard Range (49.92 kWh)",
+        subtitle: "Best for city driving and daily commutes",
+        variants: ["Atto 3 Standard Range"],
+        engineCC: 0,
+        marketValueRange: [140000, 160000],
+        insuranceRange: [1800, 2800],
+        bestFor: [
+          "City commuters",
+          "First-time EV buyers",
+          "Those with home charging",
+        ],
+        recommendedInsurers: [
+          { id: "allianz", label: "Allianz (EV coverage)" },
+          { id: "etiqa", label: "Etiqa (competitive)" },
+        ],
+      },
+      {
+        id: "atto3-extended",
+        title: "Atto 3 Extended Range (60.48 kWh)",
+        subtitle: "Best for longer range and highway driving",
+        variants: ["Atto 3 Extended Range"],
+        engineCC: 0,
+        marketValueRange: [160000, 180000],
+        insuranceRange: [2000, 3100],
+        bestFor: [
+          "Highway and outstation driving",
+          "Those needing 400+ km range",
+          "Premium EV seekers",
+        ],
+        recommendedInsurers: [
+          { id: "allianz", label: "Allianz (EV coverage)" },
+          { id: "tokio-marine", label: "Tokio Marine (premium)" },
+        ],
+      },
+    ],
+    bestFor: ["EV enthusiasts", "Eco-conscious drivers"],
+    recommendedInsurers: ["allianz", "etiqa"],
+    faqs: [
+      {
+        question: "How much is BYD Atto 3 insurance per year?",
+        answer:
+          "BYD Atto 3 comprehensive insurance costs between RM1,800-3,100 per year depending on variant (Standard Range vs Extended Range), your NCD, and insurer. With maximum 55% NCD, you could pay as low as RM810-1,400. Third Party coverage costs around RM300-480 per year.",
+      },
+      {
+        question: "Is EV insurance more expensive than petrol cars?",
+        answer:
+          "Yes, EV insurance is typically 20-40% higher than comparable petrol cars due to expensive battery replacement costs (RM30,000-50,000), specialized repair requirements, and higher vehicle market value. However, EVs save money on road tax (RM0) and fuel costs.",
+      },
+      {
+        question: "Does BYD Atto 3 insurance cover the battery?",
+        answer:
+          "Standard comprehensive policies cover battery damage from accidents and theft. However, battery degradation from normal use is NOT covered by car insurance - this falls under BYD's 8-year battery warranty. Always confirm battery coverage with your insurer.",
+      },
+      {
+        question: "How much is BYD Atto 3 road tax?",
+        answer:
+          "BYD Atto 3 road tax is RM0 - all electric vehicles in Malaysia are exempt from road tax. This saves you approximately RM400-800 per year compared to a similar-sized petrol SUV.",
+      },
+      {
+        question: "Which insurers offer good EV coverage in Malaysia?",
+        answer:
+          "Allianz, Etiqa, and Tokio Marine have developed EV-specific coverage options. Look for policies that include: battery coverage, home charging equipment protection, and specialized EV roadside assistance. Some insurers offer discounts for EVs due to lower fire risk.",
+      },
+      {
+        question: "What happens if my BYD Atto 3 battery is damaged in an accident?",
+        answer:
+          "If your battery is damaged in an insured accident, comprehensive insurance covers repair or replacement costs (which can be RM30,000-50,000). The insurer will typically send your car to BYD authorized service centers for assessment and repair.",
+      },
+      {
+        question: "Is BYD Atto 3 expensive to repair?",
+        answer:
+          "Repair costs for BYD Atto 3 are moderate to high. While it has fewer mechanical parts than petrol cars, body panels and EV-specific components need specialized handling. BYD has been expanding service centers in Malaysia, improving parts availability.",
+      },
+      {
+        question: "Should I add any special coverage for my EV?",
+        answer:
+          "Consider adding: (1) Extended battery coverage beyond standard policy, (2) Home charging equipment coverage if you have a wallbox, (3) Enhanced roadside assistance that includes flatbed towing (EVs shouldn't be tow-dragged), and (4) Rental car coverage during repairs.",
+      },
+    ],
+    updatedAt: "2026-01-28",
+  },
 };
 
 // Helper functions
