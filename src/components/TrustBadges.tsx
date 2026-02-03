@@ -49,15 +49,13 @@ export default function TrustBadges() {
       {badges.map((badge, index) => (
         <div
           key={index}
-          className="flex items-center space-x-4 bg-white rounded-xl p-4 shadow-sm"
+          className="flex flex-col items-center text-center bg-white rounded-xl p-5 shadow-sm"
         >
-          <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-800">
+          <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-800 mb-4">
             {badge.icon}
           </div>
-          <div>
-            <h3 className="font-semibold text-gray-900">{badge.title}</h3>
-            <p className="text-sm text-gray-600">{badge.description}</p>
-          </div>
+          <h3 className="font-semibold text-gray-900">{badge.title}</h3>
+          <p className="text-sm text-gray-600 mt-1">{badge.description}</p>
         </div>
       ))}
     </div>
