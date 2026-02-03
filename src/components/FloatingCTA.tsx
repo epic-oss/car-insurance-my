@@ -295,8 +295,7 @@ export default function FloatingCTA() {
                     <div className="space-y-2">
                       {[
                         { value: "price", label: "Lowest price possible" },
-                        { value: "service", label: "Good service & claims support" },
-                        { value: "both", label: "Both equally" },
+                        { value: "service", label: "24-hour claims support & Premium Service" },
                       ].map((option) => (
                         <label key={option.value} className="flex items-center space-x-3 cursor-pointer">
                           <input
