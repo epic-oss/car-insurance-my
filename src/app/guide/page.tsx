@@ -1,20 +1,10 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import { currentYear } from "@/lib/utils";
+import { useState, useMemo } from "react";
 import { guidesPreviews } from "@/lib/data/guides";
 
-export const metadata: Metadata = {
-  title: `Car Insurance Guides Malaysia ${currentYear} | Learn & Save`,
-  description:
-    "Free car insurance guides for Malaysian drivers. Learn about NCD, coverage types, claims process, and how to get the cheapest rates.",
-  keywords:
-    "car insurance guide malaysia, car insurance tips, ncd explained, how to claim car insurance",
-  openGraph: {
-    title: `Car Insurance Guides Malaysia ${currentYear}`,
-    description:
-      "Everything you need to know about car insurance in Malaysia - from NCD to claims.",
-  },
-};
+const currentYear = new Date().getFullYear();
 
 const guideIcons: Record<string, React.ReactNode> = {
   chart: (
@@ -87,6 +77,22 @@ const guideColors: Record<string, string> = {
 };
 
 export default function GuidesPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredGuides = useMemo(() => {
+    if (!searchQuery.trim()) {
+      return guidesPreviews;
+    }
+
+    const query = searchQuery.toLowerCase().trim();
+    return guidesPreviews.filter((guide) => {
+      const titleMatch = guide.title.toLowerCase().includes(query);
+      const descriptionMatch = guide.description.toLowerCase().includes(query);
+      const slugMatch = guide.slug.toLowerCase().includes(query);
+      return titleMatch || descriptionMatch || slugMatch;
+    });
+  }, [searchQuery]);
+
   return (
     <>
       {/* Hero */}
@@ -97,10 +103,59 @@ export default function GuidesPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Car Insurance Guides Malaysia
             </h1>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-gray-300 mb-8">
               Everything you need to know about car insurance in Malaysia.
               Written by experts, updated for {currentYear}.
             </p>
+
+            {/* Search Bar */}
+            <div className="max-w-lg">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <svg
+                    className="w-5 h-5 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search guides... e.g. flood insurance, NCD, claims"
+                  className="w-full pl-12 pr-4 py-3 bg-white text-gray-900 placeholder-gray-500 rounded-xl border-0 focus:ring-2 focus:ring-primary-400 outline-none transition-shadow"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600"
+                    aria-label="Clear search"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -108,49 +163,93 @@ export default function GuidesPage() {
       {/* Guides Grid */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-6">
-            {guidesPreviews.map((guide) => (
-              <Link
-                key={guide.slug}
-                href={`/guide/${guide.slug}`}
-                className="group bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:border-primary-300 transition-all duration-200"
-              >
-                <div className="flex items-start gap-4">
-                  <div
-                    className={`flex-shrink-0 w-14 h-14 rounded-xl border flex items-center justify-center ${guideColors[guide.color]}`}
+          {filteredGuides.length > 0 ? (
+            <>
+              {searchQuery && (
+                <p className="text-gray-600 mb-6">
+                  Found {filteredGuides.length} guide
+                  {filteredGuides.length !== 1 ? "s" : ""} matching &quot;
+                  {searchQuery}&quot;
+                </p>
+              )}
+              <div className="grid md:grid-cols-2 gap-6">
+                {filteredGuides.map((guide) => (
+                  <Link
+                    key={guide.slug}
+                    href={`/guide/${guide.slug}`}
+                    className="group bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:border-primary-300 transition-all duration-200"
                   >
-                    {guideIcons[guide.icon]}
-                  </div>
-                  <div className="flex-1">
-                    <h2 className="text-xl font-bold text-gray-900 group-hover:text-primary-700 transition-colors mb-2">
-                      {guide.title}
-                    </h2>
-                    <p className="text-gray-600 mb-4">{guide.description}</p>
-                    <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:text-primary-700">
-                      Read guide
-                      <svg
-                        className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    <div className="flex items-start gap-4">
+                      <div
+                        className={`flex-shrink-0 w-14 h-14 rounded-xl border flex items-center justify-center ${guideColors[guide.color]}`}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+                        {guideIcons[guide.icon]}
+                      </div>
+                      <div className="flex-1">
+                        <h2 className="text-xl font-bold text-gray-900 group-hover:text-primary-700 transition-colors mb-2">
+                          {guide.title}
+                        </h2>
+                        <p className="text-gray-600 mb-4">{guide.description}</p>
+                        <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:text-primary-700">
+                          Read guide
+                          <svg
+                            className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg
+                  className="w-8 h-8 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                No guides found
+              </h3>
+              <p className="text-gray-600 mb-4">
+                No guides match &quot;{searchQuery}&quot;. Try a different search
+                term.
+              </p>
+              <button
+                onClick={() => setSearchQuery("")}
+                className="text-primary-600 hover:text-primary-700 font-medium"
+              >
+                Clear search
+              </button>
+            </div>
+          )}
 
-          <p className="text-center text-gray-500 text-sm mt-8">
-            Last updated: {currentYear}
-          </p>
+          {!searchQuery && (
+            <p className="text-center text-gray-500 text-sm mt-8">
+              Last updated: {currentYear}
+            </p>
+          )}
         </div>
       </section>
 

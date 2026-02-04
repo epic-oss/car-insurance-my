@@ -97,7 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/car-models/vios-insurance`,
+      url: `${baseUrl}/car-models/toyota-vios-insurance`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
