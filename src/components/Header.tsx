@@ -18,7 +18,6 @@ export default function Header() {
     car_plate: "",
     postcode: "",
     phone: "",
-    priority: "",
   });
 
   const navigation = [
@@ -57,7 +56,6 @@ export default function Header() {
         car_plate: formData.car_plate.toUpperCase(),
         postcode: formData.postcode,
         phone: formData.phone,
-        priority: formData.priority,
         source: "Header CTA",
         source_url: window.location.href,
         timestamp: new Date().toISOString(),
@@ -91,7 +89,7 @@ export default function Header() {
   const closeModal = () => {
     setIsModalOpen(false);
     setIsSubmitted(false);
-    setFormData({ name: "", nric: "", car_plate: "", postcode: "", phone: "", priority: "" });
+    setFormData({ name: "", nric: "", car_plate: "", postcode: "", phone: "" });
   };
 
   return (
@@ -337,30 +335,6 @@ export default function Header() {
                         placeholder="012-3456789"
                         className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      What matters most to you?
-                    </label>
-                    <div className="space-y-2">
-                      {[
-                        { value: "price", label: "Lowest price possible" },
-                        { value: "service", label: "24-hour claims support & Premium Service" },
-                      ].map((option) => (
-                        <label key={option.value} className="flex items-center space-x-3 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="priority"
-                            value={option.value}
-                            checked={formData.priority === option.value}
-                            onChange={handleChange}
-                            required
-                            className="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500"
-                          />
-                          <span className="text-sm text-gray-700">{option.label}</span>
-                        </label>
-                      ))}
                     </div>
                   </div>
                   <button

@@ -720,6 +720,288 @@ export const carModels: Record<string, CarModel> = {
     ],
     updatedAt: "2026-01-28",
   },
+  "tesla-model-3": {
+    id: "tesla-model-3",
+    name: "Tesla Model 3",
+    shortName: "Model 3",
+    brand: "Tesla",
+    slug: "tesla-model-3-insurance",
+    tagline: "Malaysia's Most Popular Premium EV",
+    heroSubtitle:
+      "Find out how much insurance costs for Tesla Model 3 RWD, Long Range & Performance variants. Compare Liberty InsureMyTesla vs Allianz EV Shield.",
+    minPrice: 4500,
+    variants: [
+      {
+        name: "Model 3 RWD",
+        engine: "Electric (208 kW)",
+        cc: 0,
+        marketValue: 160000,
+        comprehensiveRange: [4500, 5500],
+        thirdPartyRange: [1200, 1500],
+        roadTax: 350,
+      },
+      {
+        name: "Model 3 Long Range AWD",
+        engine: "Electric (324 kW)",
+        cc: 0,
+        marketValue: 195000,
+        comprehensiveRange: [5500, 6500],
+        thirdPartyRange: [1400, 1700],
+        roadTax: 450,
+      },
+      {
+        name: "Model 3 Performance",
+        engine: "Electric (377 kW)",
+        cc: 0,
+        marketValue: 215000,
+        comprehensiveRange: [6000, 7500],
+        thirdPartyRange: [1500, 1800],
+        roadTax: 550,
+      },
+    ],
+    variantGroups: [
+      {
+        id: "model3-rwd",
+        title: "Model 3 RWD (Standard Range)",
+        subtitle: "Best value Tesla, ideal for city driving",
+        variants: ["Model 3 RWD"],
+        engineCC: 0,
+        marketValueRange: [150000, 170000],
+        insuranceRange: [4500, 5500],
+        bestFor: [
+          "First-time Tesla buyers",
+          "City commuters (513km range sufficient)",
+          "Those seeking value in premium EV",
+        ],
+        recommendedInsurers: [
+          { id: "liberty", label: "Liberty InsureMyTesla (official)" },
+          { id: "allianz", label: "Allianz EV Shield" },
+        ],
+      },
+      {
+        id: "model3-longrange",
+        title: "Model 3 Long Range AWD",
+        subtitle: "Maximum range for highway and outstation",
+        variants: ["Model 3 Long Range AWD"],
+        engineCC: 0,
+        marketValueRange: [180000, 210000],
+        insuranceRange: [5500, 6500],
+        bestFor: [
+          "Frequent highway/outstation drivers",
+          "Those needing 629km range",
+          "AWD performance seekers",
+        ],
+        recommendedInsurers: [
+          { id: "liberty", label: "Liberty InsureMyTesla (official)" },
+          { id: "allianz", label: "Allianz EV Shield" },
+        ],
+      },
+      {
+        id: "model3-performance",
+        title: "Model 3 Performance",
+        subtitle: "Track-ready performance, 3.3s 0-100km/h",
+        variants: ["Model 3 Performance"],
+        engineCC: 0,
+        marketValueRange: [200000, 230000],
+        insuranceRange: [6000, 7500],
+        bestFor: [
+          "Performance enthusiasts",
+          "Those wanting fastest acceleration",
+          "Track day participants",
+        ],
+        recommendedInsurers: [
+          { id: "liberty", label: "Liberty InsureMyTesla (official)" },
+          { id: "tokio-marine", label: "Tokio Marine (premium)" },
+        ],
+      },
+    ],
+    bestFor: ["Premium EV buyers", "Tech enthusiasts"],
+    recommendedInsurers: ["liberty", "allianz"],
+    faqs: [
+      {
+        question: "How much is Tesla Model 3 insurance per year?",
+        answer:
+          "Tesla Model 3 comprehensive insurance costs between RM4,500-7,500 per year depending on variant (RWD, Long Range, or Performance), your NCD, and insurer. With maximum 55% NCD, you could pay as low as RM2,000-3,400. Third Party coverage costs around RM1,200-1,800 per year.",
+      },
+      {
+        question: "Why is Tesla insurance so expensive?",
+        answer:
+          "Tesla insurance is expensive due to: (1) High vehicle value (RM189,000-259,000), (2) Proprietary parts that must be imported, (3) Aluminum body panels that must be replaced not repaired, (4) Expensive Autopilot sensors and cameras, (5) Limited Tesla-certified repair shops in Malaysia, and (6) Structural battery pack that makes moderate accidents often total loss.",
+      },
+      {
+        question: "Should I choose Liberty InsureMyTesla or Allianz?",
+        answer:
+          "Liberty InsureMyTesla is Tesla's official insurance partner with Tesla-specific benefits like integrated service and 12-month repair warranty. Allianz EV Shield offers higher charger coverage (RM15,000 vs RM12,000) and unique mobile EV charging service. Liberty is best for purists wanting seamless Tesla experience; Allianz may offer better value and features.",
+      },
+      {
+        question: "Does Tesla insurance cover Autopilot accidents?",
+        answer:
+          "Yes, comprehensive coverage applies regardless of whether Autopilot was engaged. However, remember that Autopilot is driver-assist technology, not fully autonomous. The driver is always legally responsible for the vehicle.",
+      },
+      {
+        question: "Is my Tesla home charger covered?",
+        answer:
+          "With EV-specific policies: Liberty InsureMyTesla covers RM12,000, Allianz EV Shield covers RM15,000, and Etiqa Tesla Ensure covers RM12,000. Tesla Wall Connector costs RM4,000-6,000 installed, so coverage is typically adequate.",
+      },
+      {
+        question: "What happens if my Tesla battery is damaged?",
+        answer:
+          "Tesla's battery is a structural component. Even minor underbody impacts may require battery inspection. Battery replacement costs RM80,000-120,000, which often exceeds the total loss threshold. Many moderate Tesla accidents result in total loss due to battery concerns.",
+      },
+      {
+        question: "Can any workshop repair my Tesla?",
+        answer:
+          "No. Tesla repairs require Tesla-certified body shops that use approved parts and repair procedures. Malaysia has limited certified shops currently, though the network is growing. For insurance claims, your insurer will direct you to a certified facility.",
+      },
+      {
+        question: "How much is Tesla Model 3 road tax in Malaysia?",
+        answer:
+          "Tesla Model 3 road tax is approximately RM300-600 per year depending on the motor power output. RWD is around RM350, Long Range around RM450, and Performance around RM550. This is significantly cheaper than equivalent petrol luxury sedans.",
+      },
+    ],
+    updatedAt: new Date().toISOString().split("T")[0],
+  },
+  "tesla-model-y": {
+    id: "tesla-model-y",
+    name: "Tesla Model Y",
+    shortName: "Model Y",
+    brand: "Tesla",
+    slug: "tesla-model-y-insurance",
+    tagline: "Tesla's Best-Selling Electric SUV",
+    heroSubtitle:
+      "Find out how much insurance costs for Tesla Model Y RWD, Long Range & Performance variants. Compare Liberty InsureMyTesla vs Allianz EV Shield for your SUV.",
+    minPrice: 5400,
+    variants: [
+      {
+        name: "Model Y RWD",
+        engine: "Electric (220 kW)",
+        cc: 0,
+        marketValue: 180000,
+        comprehensiveRange: [5400, 6200],
+        thirdPartyRange: [1400, 1700],
+        roadTax: 400,
+      },
+      {
+        name: "Model Y Long Range AWD",
+        engine: "Electric (378 kW)",
+        cc: 0,
+        marketValue: 225000,
+        comprehensiveRange: [6200, 7200],
+        thirdPartyRange: [1600, 1900],
+        roadTax: 500,
+      },
+      {
+        name: "Model Y Performance",
+        engine: "Electric (393 kW)",
+        cc: 0,
+        marketValue: 255000,
+        comprehensiveRange: [7000, 7700],
+        thirdPartyRange: [1800, 2100],
+        roadTax: 550,
+      },
+    ],
+    variantGroups: [
+      {
+        id: "modely-rwd",
+        title: "Model Y RWD (Standard Range)",
+        subtitle: "Best value Tesla SUV for city and family use",
+        variants: ["Model Y RWD"],
+        engineCC: 0,
+        marketValueRange: [170000, 190000],
+        insuranceRange: [5400, 6200],
+        bestFor: [
+          "Families needing SUV space",
+          "City commuters (455km range sufficient)",
+          "First-time Tesla SUV buyers",
+        ],
+        recommendedInsurers: [
+          { id: "liberty", label: "Liberty InsureMyTesla (official)" },
+          { id: "allianz", label: "Allianz EV Shield" },
+        ],
+      },
+      {
+        id: "modely-longrange",
+        title: "Model Y Long Range AWD",
+        subtitle: "Maximum range and AWD for highway driving",
+        variants: ["Model Y Long Range AWD"],
+        engineCC: 0,
+        marketValueRange: [210000, 240000],
+        insuranceRange: [6200, 7200],
+        bestFor: [
+          "Frequent outstation/highway drivers",
+          "Those needing 533km range",
+          "AWD capability in wet conditions",
+        ],
+        recommendedInsurers: [
+          { id: "liberty", label: "Liberty InsureMyTesla (official)" },
+          { id: "allianz", label: "Allianz EV Shield" },
+        ],
+      },
+      {
+        id: "modely-performance",
+        title: "Model Y Performance",
+        subtitle: "Track-ready SUV, 3.7s 0-100km/h",
+        variants: ["Model Y Performance"],
+        engineCC: 0,
+        marketValueRange: [240000, 270000],
+        insuranceRange: [7000, 7700],
+        bestFor: [
+          "Performance SUV enthusiasts",
+          "Those wanting fastest acceleration",
+          "Premium feature seekers",
+        ],
+        recommendedInsurers: [
+          { id: "liberty", label: "Liberty InsureMyTesla (official)" },
+          { id: "tokio-marine", label: "Tokio Marine (premium)" },
+        ],
+      },
+    ],
+    bestFor: ["Premium SUV buyers", "Families wanting EV"],
+    recommendedInsurers: ["liberty", "allianz"],
+    faqs: [
+      {
+        question: "How much is Tesla Model Y insurance per year?",
+        answer:
+          "Tesla Model Y comprehensive insurance costs between RM5,400-7,700 per year depending on variant (RWD, Long Range, or Performance), your NCD, and insurer. With maximum 55% NCD, you could pay as low as RM2,400-3,500. Third Party coverage costs around RM1,400-2,100 per year.",
+      },
+      {
+        question: "Why is Model Y insurance more expensive than Model 3?",
+        answer:
+          "Model Y insurance is about RM800-1,000 more than Model 3 due to: (1) Higher vehicle value (RM20,000-30,000 more), (2) Larger body panels = more expensive repairs, (3) Bigger panoramic glass roof, and (4) SUV body type historically has higher claims frequency.",
+      },
+      {
+        question: "Is the panoramic glass roof covered?",
+        answer:
+          "Yes, the glass roof is covered under comprehensive insurance. However, replacement costs RM10,000-15,000 while standard windscreen coverage is usually RM3,000-5,000. You may need to pay the difference or request higher glass coverage limits.",
+      },
+      {
+        question: "Should I choose Liberty InsureMyTesla or Allianz for Model Y?",
+        answer:
+          "Liberty is Tesla's official partner with seamless integration and 12-month repair warranty. Allianz EV Shield offers higher charger coverage (RM15,000 vs RM12,000), mobile EV charging service, and is often 5-10% cheaper. Allianz is better value; Liberty is better for Tesla purists.",
+      },
+      {
+        question: "Can I use Model Y for e-hailing (Grab)?",
+        answer:
+          "Private comprehensive insurance does NOT cover commercial use. If using for e-hailing, you need a commercial/e-hailing specific policy with higher premiums and different coverage terms. Always declare commercial use to your insurer.",
+      },
+      {
+        question: "Does the 7-seater option affect insurance?",
+        answer:
+          "No, the 7-seater option does not affect insurance premium as it doesn't change the vehicle's market value classification. Third-row passengers are covered under standard liability. No special endorsement is needed.",
+      },
+      {
+        question: "What happens if the battery is damaged?",
+        answer:
+          "Tesla's battery is structural. Even minor underbody impacts may require inspection. Battery replacement costs RM80,000-150,000, often exceeding total loss threshold. Many moderate Model Y accidents result in total loss due to battery concerns.",
+      },
+      {
+        question: "How much is Tesla Model Y road tax in Malaysia?",
+        answer:
+          "Tesla Model Y road tax is approximately RM400-550 per year depending on motor power output. RWD is around RM400, Long Range around RM500, and Performance around RM550. This is significantly cheaper than equivalent petrol luxury SUVs.",
+      },
+    ],
+    updatedAt: new Date().toISOString().split("T")[0],
+  },
 };
 
 // Helper functions

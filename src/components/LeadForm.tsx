@@ -22,7 +22,6 @@ export default function LeadForm({
     car_plate: "",
     postcode: "",
     phone: "",
-    priority: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -58,7 +57,6 @@ export default function LeadForm({
         phone: formData.phone.replace(/\s|-/g, ""),
         car_plate: formData.car_plate.toUpperCase(),
         postcode: formData.postcode,
-        priority: formData.priority,
         source_url: typeof window !== "undefined" ? window.location.href : "",
         source: source,
         site: "carinsurancemy.com",
@@ -220,31 +218,6 @@ export default function LeadForm({
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               required
             />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            What matters most to you?
-          </label>
-          <div className="space-y-2">
-            {[
-              { value: "price", label: "Lowest price possible" },
-              { value: "service", label: "24-hour claims support & Premium Service" },
-            ].map((option) => (
-              <label key={option.value} className="flex items-center space-x-3 cursor-pointer">
-                <input
-                  type="radio"
-                  name="priority"
-                  value={option.value}
-                  checked={formData.priority === option.value}
-                  onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
-                  required
-                  className="w-4 h-4 text-primary-600 border-gray-300 focus:ring-primary-500"
-                />
-                <span className="text-sm text-gray-700">{option.label}</span>
-              </label>
-            ))}
           </div>
         </div>
 
