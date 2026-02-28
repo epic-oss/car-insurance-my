@@ -515,6 +515,143 @@ export const carModels: Record<string, CarModel> = {
     ],
     updatedAt: "2026-01-25",
   },
+  bezza: {
+    id: "bezza",
+    name: "Perodua Bezza",
+    shortName: "Bezza",
+    brand: "Perodua",
+    slug: "perodua-bezza-insurance",
+    tagline: "Malaysia's E-Hailing & Family Favourite Sedan",
+    heroSubtitle:
+      "Find out how much insurance costs for Perodua Bezza 1.0 G & 1.3 X/AV variants. Popular with e-hailing drivers and budget families. Compare quotes from 15+ insurers.",
+    minPrice: 380,
+    variants: [
+      {
+        name: "Bezza 1.0 G MT",
+        engine: "1.0L (69 PS)",
+        cc: 998,
+        marketValue: 27500,
+        comprehensiveRange: [850, 1000],
+        thirdPartyRange: [120, 200],
+        roadTax: 20,
+      },
+      {
+        name: "Bezza 1.0 G AT",
+        engine: "1.0L (69 PS)",
+        cc: 998,
+        marketValue: 31000,
+        comprehensiveRange: [950, 1100],
+        thirdPartyRange: [120, 200],
+        roadTax: 20,
+      },
+      {
+        name: "Bezza 1.3 X AT",
+        engine: "1.3L (94 PS)",
+        cc: 1329,
+        marketValue: 38500,
+        comprehensiveRange: [1100, 1250],
+        thirdPartyRange: [150, 250],
+        roadTax: 70,
+      },
+      {
+        name: "Bezza 1.3 AV AT",
+        engine: "1.3L (94 PS)",
+        cc: 1329,
+        marketValue: 44000,
+        comprehensiveRange: [1200, 1400],
+        thirdPartyRange: [150, 250],
+        roadTax: 70,
+      },
+    ],
+    variantGroups: [
+      {
+        id: "bezza-1.0",
+        title: "Bezza 1.0 G (Manual & Auto)",
+        subtitle: "Best for budget-first buyers and e-hailing drivers",
+        variants: ["Bezza 1.0 G MT", "Bezza 1.0 G AT"],
+        engineCC: 998,
+        marketValueRange: [25000, 34000],
+        insuranceRange: [380, 495],
+        bestFor: [
+          "E-hailing drivers (Grab, Lalamove)",
+          "Budget-conscious first-car buyers",
+          "Driving school use",
+        ],
+        recommendedInsurers: [
+          { id: "allianz", label: "Allianz (e-hailing add-on)" },
+          { id: "etiqa", label: "Etiqa (competitive)" },
+        ],
+      },
+      {
+        id: "bezza-1.3",
+        title: "Bezza 1.3 X & AV (Auto)",
+        subtitle: "Best for families wanting more power and features",
+        variants: ["Bezza 1.3 X AT", "Bezza 1.3 AV AT"],
+        engineCC: 1329,
+        marketValueRange: [35000, 48000],
+        insuranceRange: [495, 630],
+        bestFor: [
+          "Families needing sedan practicality",
+          "Highway commuters wanting more power",
+          "Those wanting ASA 2.0 safety (AV variant)",
+        ],
+        recommendedInsurers: [
+          { id: "allianz", label: "Allianz (ASA calibration covered)" },
+          { id: "zurich", label: "Zurich (value)" },
+        ],
+      },
+    ],
+    bestFor: [
+      "E-hailing drivers",
+      "Budget-conscious families",
+      "First-time car owners",
+    ],
+    recommendedInsurers: ["allianz", "etiqa"],
+    faqs: [
+      {
+        question: "How much is Perodua Bezza insurance per year?",
+        answer:
+          "Bezza comprehensive insurance costs RM850-1,400 per year at 0% NCD depending on variant. With maximum 55% NCD, you could pay as low as RM380-630. The 1.0L variants are cheaper to insure than the 1.3L variants.",
+      },
+      {
+        question: "Do I need e-hailing insurance for my Bezza?",
+        answer:
+          "If you drive for Grab, Lalamove, InDrive, or any platform, YES - it's essential. Standard private insurance does NOT cover you while working. You need an e-hailing add-on (RM300-500/year extra). Without it, any claim while on a job will be rejected.",
+      },
+      {
+        question: "Is Bezza the cheapest car to insure?",
+        answer:
+          "Close - Perodua Axia is slightly cheaper due to lower market value. But Bezza is among the cheapest sedans to insure in Malaysia, thanks to its low price, small engine options, and excellent parts availability.",
+      },
+      {
+        question: "How much is Bezza road tax and insurance together?",
+        answer:
+          "For Bezza 1.0L, road tax is only RM20 plus insurance from RM380-495, totaling about RM400-515 annually. For Bezza 1.3L, road tax is RM70 plus insurance from RM495-630, totaling about RM565-700.",
+      },
+      {
+        question: "Should I claim for minor Bezza damage?",
+        answer:
+          "Calculate first: claiming resets your NCD (lose 25-55% discount). For damage under RM1,000, it's usually cheaper to pay cash than to lose years of NCD savings. Example: RM500 repair vs losing RM300+/year discount for 5 years.",
+      },
+      {
+        question:
+          "Does ASA 2.0 affect my Bezza insurance?",
+        answer:
+          "Only the 1.3 AV variant has ASA 2.0. Impact on premium is minimal, but after windscreen replacement or front-end repairs, camera calibration is required (RM150-350 extra). Ensure your insurer covers this cost.",
+      },
+      {
+        question: "Bezza or Saga - which is cheaper to insure?",
+        answer:
+          "Very similar. Bezza 1.0L variants are slightly cheaper to insure than Saga 1.3L due to the smaller engine and lower market value. Bezza 1.3L and Saga are almost identical in insurance costs. Choose based on car preference, not insurance.",
+      },
+      {
+        question: "I bought a used Bezza for e-hailing. What do I need?",
+        answer:
+          "You need: (1) comprehensive car insurance, (2) e-hailing endorsement/add-on, (3) PSV license, (4) E-hailing Vehicle Permit (EVP). Verify the NCD transfer from the previous owner and confirm actual market value before purchasing coverage.",
+      },
+    ],
+    updatedAt: new Date().toISOString().split("T")[0],
+  },
   saga: {
     id: "saga",
     name: "Proton Saga",
@@ -622,6 +759,188 @@ export const carModels: Record<string, CarModel> = {
       },
     ],
     updatedAt: "2026-01-25",
+  },
+  "proton-x50-s70": {
+    id: "proton-x50-s70",
+    name: "Proton X50 & S70",
+    shortName: "X50 & S70",
+    brand: "Proton",
+    slug: "proton-x50-s70-insurance",
+    tagline: "Proton's Modern Era - Turbocharged, DCT & ADAS",
+    heroSubtitle:
+      "Find out how much insurance costs for Proton X50 1.5T & S70 1.5T variants. Compare quotes from 15+ insurers with DCT and ADAS coverage included.",
+    minPrice: 700,
+    variants: [
+      {
+        name: "X50 1.5T Standard",
+        engine: "1.5L Turbo (150 PS)",
+        cc: 1477,
+        marketValue: 75000,
+        comprehensiveRange: [1900, 2100],
+        thirdPartyRange: [200, 300],
+        roadTax: 90,
+      },
+      {
+        name: "X50 1.5T Executive",
+        engine: "1.5L Turbo (150 PS)",
+        cc: 1477,
+        marketValue: 83000,
+        comprehensiveRange: [2050, 2300],
+        thirdPartyRange: [220, 320],
+        roadTax: 90,
+      },
+      {
+        name: "X50 1.5T Premium",
+        engine: "1.5L Turbo (150 PS)",
+        cc: 1477,
+        marketValue: 90000,
+        comprehensiveRange: [2200, 2500],
+        thirdPartyRange: [240, 340],
+        roadTax: 90,
+      },
+      {
+        name: "X50 1.5 TGDI Flagship",
+        engine: "1.5L Turbo TGDI (181 PS)",
+        cc: 1477,
+        marketValue: 101500,
+        comprehensiveRange: [2500, 2850],
+        thirdPartyRange: [260, 360],
+        roadTax: 90,
+      },
+      {
+        name: "S70 1.5T Executive",
+        engine: "1.5L Turbo (150 PS)",
+        cc: 1477,
+        marketValue: 60000,
+        comprehensiveRange: [1550, 1750],
+        thirdPartyRange: [180, 280],
+        roadTax: 90,
+      },
+      {
+        name: "S70 1.5T Premium",
+        engine: "1.5L Turbo (150 PS)",
+        cc: 1477,
+        marketValue: 67000,
+        comprehensiveRange: [1700, 1900],
+        thirdPartyRange: [190, 290],
+        roadTax: 90,
+      },
+      {
+        name: "S70 1.5T Flagship",
+        engine: "1.5L Turbo (150 PS)",
+        cc: 1477,
+        marketValue: 77000,
+        comprehensiveRange: [1950, 2150],
+        thirdPartyRange: [210, 310],
+        roadTax: 90,
+      },
+      {
+        name: "S70 1.5T Flagship X",
+        engine: "1.5L Turbo (150 PS)",
+        cc: 1477,
+        marketValue: 84000,
+        comprehensiveRange: [2100, 2350],
+        thirdPartyRange: [220, 320],
+        roadTax: 90,
+      },
+    ],
+    variantGroups: [
+      {
+        id: "x50-variants",
+        title: "X50 1.5T (Standard, Executive, Premium & TGDI Flagship)",
+        subtitle: "B-Segment SUV with turbocharged power and ADAS",
+        variants: [
+          "X50 1.5T Standard",
+          "X50 1.5T Executive",
+          "X50 1.5T Premium",
+          "X50 1.5 TGDI Flagship",
+        ],
+        engineCC: 1477,
+        marketValueRange: [70000, 108000],
+        insuranceRange: [855, 1280],
+        bestFor: [
+          "SUV lovers wanting turbocharged performance",
+          "Families needing ADAS safety features",
+          "Those upgrading from Saga/Persona",
+        ],
+        recommendedInsurers: [
+          { id: "allianz", label: "Allianz (ADAS coverage)" },
+          { id: "zurich", label: "Zurich (competitive)" },
+        ],
+      },
+      {
+        id: "s70-variants",
+        title: "S70 1.5T (Executive, Premium, Flagship & Flagship X)",
+        subtitle: "C-Segment sedan with premium features at competitive price",
+        variants: [
+          "S70 1.5T Executive",
+          "S70 1.5T Premium",
+          "S70 1.5T Flagship",
+          "S70 1.5T Flagship X",
+        ],
+        engineCC: 1477,
+        marketValueRange: [55000, 90000],
+        insuranceRange: [700, 1060],
+        bestFor: [
+          "Sedan buyers wanting modern technology",
+          "Budget-conscious drivers seeking premium features",
+          "Honda City / Toyota Vios cross-shoppers",
+        ],
+        recommendedInsurers: [
+          { id: "allianz", label: "Allianz (ADAS coverage)" },
+          { id: "zurich", label: "Zurich (value)" },
+        ],
+      },
+    ],
+    bestFor: [
+      "Modern Proton buyers",
+      "Those wanting turbo + DCT + ADAS at affordable price",
+    ],
+    recommendedInsurers: ["allianz", "zurich"],
+    faqs: [
+      {
+        question: "How much is Proton X50 insurance per year?",
+        answer:
+          "Proton X50 comprehensive insurance costs between RM1,900-2,850 per year (at 0% NCD) depending on variant. With maximum 55% NCD, you could pay as low as RM855-1,280. The TGDI Flagship is slightly higher due to its 181 PS performance tier.",
+      },
+      {
+        question: "How much is Proton S70 insurance per year?",
+        answer:
+          "Proton S70 comprehensive insurance costs between RM1,550-2,350 per year (at 0% NCD). With maximum 55% NCD, you could pay as low as RM700-1,060. S70 is 10-15% cheaper to insure than X50 due to its sedan body type and lower price point.",
+      },
+      {
+        question: "Is Proton X50/S70 expensive to insure?",
+        answer:
+          "X50 and S70 are mid-range vehicles, so insurance reflects that. They're not as cheap as Saga or Wira, but fairly priced for their value and technology. Insurance is competitive with Honda City and Toyota Vios despite having turbo engine, DCT and ADAS onboard.",
+      },
+      {
+        question: "Does the DCT gearbox affect my insurance?",
+        answer:
+          "The 7-speed DCT doesn't directly increase premiums, but repair costs matter. DCT repairs are expensive (RM3,000-15,000+ for major issues). Ensure your insurer's panel workshops have DCT experience. Accident damage to DCT is covered; mechanical failure is a warranty claim, not insurance.",
+      },
+      {
+        question: "What about ADAS calibration after repairs?",
+        answer:
+          "After front-end repairs or windscreen replacement, ADAS camera and radar calibration is required (RM200-600 additional cost). Quality insurers like Allianz and Zurich cover this as part of repairs. Budget insurers often dispute it - clarify before purchasing your policy.",
+      },
+      {
+        question:
+          "Should I get comprehensive or third-party for X50/S70?",
+        answer:
+          "Comprehensive is strongly recommended. Car values are RM73,000-113,000, theft risk is real for these popular models, and ADAS/DCT repairs are expensive if paying yourself. The premium difference over third-party is well worth the protection.",
+      },
+      {
+        question: "Can any workshop repair my X50 or S70?",
+        answer:
+          "Technically yes, but not advisable. DCT needs specialist knowledge, ADAS calibration needs specific equipment, and some components are Geely-sourced with limited aftermarket options. Use your insurer's panel workshop with Proton experience, or a Proton 3S/4S center.",
+      },
+      {
+        question: "Which insurer is best for Proton X50 & S70?",
+        answer:
+          "Allianz and Zurich are recommended. Both have large panel networks with modern Proton experience, proper ADAS calibration coverage, and DCT-trained technicians. The small premium difference over budget insurers buys faster claims (2 weeks vs 7 weeks) and proper repair quality.",
+      },
+    ],
+    updatedAt: new Date().toISOString().split("T")[0],
   },
   "byd-atto-3": {
     id: "byd-atto-3",
